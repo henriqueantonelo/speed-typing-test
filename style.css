@@ -15,7 +15,7 @@ body {
 
 main {
   width: 600px;
-  margin: 50px;
+  margin: 50px auto;
 }
 
 h1 {
@@ -52,13 +52,19 @@ div#game {
   position: relative;
 }
 
+div#game:focus {
+  outline: 0;
+}
+
 #words {
   filter: blur(5px);
   color: var(--textSecondary);
 }
 
 #game:focus #words {
+
   filter: blur(0);
+  transition: all 0.25s ease 0s;
 }
 
 #focus-error {
@@ -83,4 +89,47 @@ div.word {
 }
 .letter.incorrect {
   color: #f55;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#cursor {
+  display: none;
+  width: 3px;
+  height: 1.6rem;
+  background: var(--primaryColor);
+  position: fixed;
+  top: 198px;
+  animation: blink 1s infinite;
+}
+
+#game:focus #cursor{
+  display: block;
+}
+
+#game.over #words{
+  opacity: .5;
+  filter: blur(0px);
+}
+
+#game.over:focus #cursor {
+  display: none;
+}
+
+#game.over #focus-error {
+  display: none;
+}
+
+.blur {
+  filter: blur(5px);
 }
