@@ -64,6 +64,8 @@ document.getElementById("game").addEventListener("keyup", (ev) => {
   const isBackspace = key === 'Backspace'
   const isFirstLetter = currentLetter === currentWord.firstChild;
 
+  // const isExtra = document.que
+
   if (document.querySelector('#game.over')) {
     return;
   }
@@ -85,20 +87,26 @@ if(!window.timer && isLetter) {
   }, 1000)
 }
 
-  if (isLetter) {
-    if (currentLetter) {
-      addClass(currentLetter, key === expected ? 'correct' : 'incorrect')
-      removeClass(currentLetter, 'current');
-      if(currentLetter.nextSibling) {
-        addClass(currentLetter.nextSibling, 'current')
+if (isLetter) {
+  if (currentLetter) {
+    addClass(currentLetter, key === expected ? 'correct' : 'incorrect');
+    removeClass(currentLetter, 'current');
+    if (currentLetter.nextSibling) {
+      addClass(currentLetter.nextSibling, 'current');
+    }
+  } else {
+    if (expected !== ' ') {
+      if (currentWord.lastChild.className.includes('extra')) {
+        currentWord.removeChild(currentWord.lastChild);
       }
-    } else {
       const incorrectLetter = document.createElement('span');
       incorrectLetter.innerHTML = key;
-      incorrectLetter.className = 'letter incorrect extra'
-      currentWord.appendChild(incorrectLetter)
+      incorrectLetter.className = 'letter incorrect extra';
+      currentWord.appendChild(incorrectLetter);
     }
   }
+}
+
 
   if (isSpace) {
     if(expected !== '') {
@@ -171,4 +179,8 @@ newGame();
 //PENSAMENTOS//
 Talvez o foco tenha que ser arrumado por inteiro, usando uma função ao invés de fazer tudo no css
 Usar o window.onload
+
+Se a proxima letra for space, ultimo parente ! space, não deixa a letra vermelha
 */
+
+// if (nextLetter === space)  

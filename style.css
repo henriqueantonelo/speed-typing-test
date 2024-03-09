@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital@0;1&display=swap");
 :root {
-  --bgcolor: #333;
+  --bgcolor: #333333;
   --textPrimary: #fff;
   --textSecondary: #666;
   --primaryColor: #fd4;
@@ -130,6 +130,6 @@ div.word {
   display: none;
 }
 
-.blur {
-  filter: blur(5px);
+.none {
+  display: none;
 }
