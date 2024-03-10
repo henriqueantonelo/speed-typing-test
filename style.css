@@ -57,13 +57,12 @@ div#game:focus {
 }
 
 #words {
-  filter: blur(5px);
+  filter: blur(5px); /* Desfocado inicialmente */
   color: var(--textSecondary);
 }
 
 #game:focus #words {
-
-  filter: blur(0);
+  filter: blur(0); /* Remove o desfoque quando #game recebe foco */
   transition: all 0.25s ease 0s;
 }
 
@@ -115,6 +114,7 @@ div.word {
 
 #game:focus #cursor{
   display: block;
+  
 }
 
 #game.over #words{
@@ -132,4 +132,21 @@ div.word {
 
 .none {
   display: none;
+}
+
+#cursor.right {
+  transition: left 0.3s ease
+}
+
+#instructions {
+  position: absolute;
+  bottom: 0;
+  font-size: 1rem;
+  color: var(--textSecondary);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+#instructions p {
+  text-align: left;
 }
