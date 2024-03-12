@@ -21,6 +21,7 @@ main {
 
 h1 {
   color: var(--primaryColor);
+  text-align: center;
 }
 
 #header {
@@ -49,6 +50,8 @@ button {
 .fa-rotate-right {
   color: var(--tertiaryColor);
   font-size: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 div#game {
