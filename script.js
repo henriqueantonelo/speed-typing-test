@@ -150,7 +150,7 @@ function restartGame () {
     }
   
     // movendo as linhas / palavras
-    if (currentWord.getBoundingClientRect().top > 250) {
+    if (currentWord.getBoundingClientRect().top > 260) {
       const words = document.getElementById('words')
       const margin = parseInt(words.style.marginTop || '0px');
       words.style.marginTop = (margin - 35) + 'px';
@@ -168,9 +168,34 @@ function restartGame () {
   return
 }
 
+function restartGameNew() {
+  document.getElementById("words").innerHTML = "";
+  clearInterval(window.timer);
+  window.timer = null;
+  removeClass(document.getElementById('game'), 'over');
+  document.getElementById('info').innerHTML = (gameTime / 1000);
+  newGame();
+  window.gameStart = null;
+
+  document.getElementById('words').style.marginTop = '0';
+
+  cursor.style.top = '198px'
+  cursor.style.left = '363px'
+  
+}
+
+const game = document.getElementById('gameWrapper');
+
+const resetFocus = () => {
+  document.activeElement.blur();
+  game.focus();
+}
+
 document.getElementById('newGameBtn').addEventListener('click', () => {
-  location.reload()
+  restartGameNew();
+  resetFocus();
 })
+
 restartGame()
 newGame();
 
