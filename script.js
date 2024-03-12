@@ -1,3 +1,10 @@
+const tween = KUTE.fromTo(
+  '#blob1',
+  { path: '#blob1' },
+  { path: '#blob2' },
+  { repeat: 999, duration: 5500, yoyo: true}
+).start();
+
 const words =
   "cebola trem estrela vaso plantas de ursinho de pelúcia biscoito perna quando pode ser maior até hoje filme perder estar nem haver o nada usar possível isto sobre sem haver pequeno qualquer dever ajudar problema mulher agora tal eu jogo tipo nome elas fazer social de conseguir vez para trabalhar tão também qual então aquele mulher coisa contra tanto questão para novo palavra serviço esse cidade sem tentar como hora criar dia aquele".split(
     " "
@@ -153,8 +160,7 @@ function restartGame () {
     if (currentWord.getBoundingClientRect().top > 260) {
       const words = document.getElementById('words')
       const margin = parseInt(words.style.marginTop || '0px');
-      words.style.marginTop = (margin - 35) + 'px';
-  
+      words.style.marginTop = (margin - 37) + 'px';
     }
   
     // movimentando cursor
@@ -181,19 +187,10 @@ function restartGameNew() {
 
   cursor.style.top = '198px'
   cursor.style.left = '363px'
-  
-}
-
-const game = document.getElementById('gameWrapper');
-
-const resetFocus = () => {
-  document.activeElement.blur();
-  game.focus();
 }
 
 document.getElementById('newGameBtn').addEventListener('click', () => {
   restartGameNew();
-  resetFocus();
 })
 
 restartGame()

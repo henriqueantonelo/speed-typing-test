@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital@0;1&display=swap");
 :root {
-  --bgcolor: #333333;
+  --bgcolor: rgb(42, 42, 42);
   --textPrimary: #fff;
   --textSecondary: #666;
-  --primaryColor: #fd4;
+  --primaryColor: rgb(255, 115, 0);
+  --tertiaryColor:  rgb(182, 182, 182);
 }
 
 body {
@@ -30,6 +31,7 @@ h1 {
 
 #buttons {
   text-align: right;
+  margin: 50px auto;
 }
 
 #info {
@@ -37,12 +39,16 @@ h1 {
 }
 
 button {
-  background: rgba(255, 255, 255, 0.2);
+  background: transparent;
   border: 0;
-  color: rgba(255, 255, 255, 0.5);
   padding: 5px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.fa-rotate-right {
+  color: var(--tertiaryColor);
+  font-size: 20px;
 }
 
 div#game {
@@ -57,7 +63,7 @@ div#game:focus {
 }
 
 #words {
-  filter: blur(5px); /* Desfocado inicialmente */
+  filter: blur(7px);
   color: var(--textSecondary);
 }
 
@@ -71,6 +77,10 @@ div#game:focus {
   inset: 0;
   text-align: center;
   padding-top: 35px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: var(--tertiaryColor);
+  font-weight: bold;
 }
 
 #game:focus #focus-error {
@@ -109,6 +119,7 @@ div.word {
   background: var(--primaryColor);
   position: fixed;
   top: 198px;
+  left: 365px;
   animation: blink 1s infinite;
 }
 
@@ -130,23 +141,32 @@ div.word {
   display: none;
 }
 
-.none {
-  display: none;
-}
-
 #cursor.right {
   transition: left 0.3s ease
 }
 
 #instructions {
-  position: absolute;
-  bottom: 0;
   font-size: 1rem;
-  color: var(--textSecondary);
+  color: var(--tertiaryColor);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#instructions p {
-  text-align: left;
+.blob-motion {
+  z-index: -1;
+  position: fixed;
+  left: -1200px;
+  top: 275px;
+  transform: rotate(90deg);
+  overflow: hidden;
+}
+
+#blob1 {
+  fill: var(--primaryColor);
+  filter: blur(4px);
 }
