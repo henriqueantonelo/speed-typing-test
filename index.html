@@ -19,18 +19,20 @@
         <div id="info"></div>
         </div>
       </div>
-      <div id="game" tabindex="0">
-        <div id="words">contra sem trabalhar jogo vez trabalhar coisa mulher quando tipo conseguir tão haver como isto tão de ser qual hora eu haver de vaso atividade mamão quando pode até</div>
-        <div id="cursor"></div>
-        <div id="focus-error">
-            <i class="fas fa-mouse-pointer"></i>
-            &nbsp;Click here or press tab to focus</div>
+      <div id="game-wrapper" tabindex="0">
+        <div id="game" tabindex="0">
+         <div id="words"></div>
+          <div id="cursor"></div>
+          <div id="focus-error">
+              <i class="fas fa-mouse-pointer"></i>
+              &nbsp;Click here or press tab to focus</div>
+       </div>
+       <div id="buttons">
+         <button id="newGameBtn" class="fa-solid fa-rotate-right" tabindex="0"></button>
+          <div id="instructions">
+              <p>Press tab + enter to restart</p>
+            </div>
       </div>
-      <div id="buttons">
-        <button id="newGameBtn" class="fa-solid fa-rotate-right" tabindex="0"></button>
-        <div id="instructions">
-            <p>Press tab + enter to restart</p>
-          </div>
     </main>
     
     <section class="blob">
@@ -63,7 +65,22 @@
           ></path></g>
     </svg>
   </section>
+
+  <!-- <div id="snippet" tabindex="0">
+    <div>Tab to or select input to focus. To reset focus:
+    </div>
+    <ul>
+      <li>Press escape key.</li>
+      <li>Or, click "Reset" button.</li>
+    </ul>
+    <div id="divFocus" tabindex="0">
+      <input id="input1" type="text" name="input1" />
+    </div>
+    <div>
+      <input id="input2" type="text" name="input2" />
+    </div>
+    <button id="button1">Reset</button>
+  </div> -->
     <script src="script.js"></script>
   </body>
 </html>
-

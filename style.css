@@ -4,7 +4,7 @@
   --textPrimary: #fff;
   --textSecondary: #666;
   --primaryColor: rgb(255, 115, 0);
-  --tertiaryColor:  rgb(182, 182, 182);
+  --tertiaryColor: rgb(182, 182, 182);
 }
 
 body {
@@ -22,6 +22,10 @@ main {
 h1 {
   color: var(--primaryColor);
   text-align: center;
+}
+
+#game-wrapper {
+  outline: none;
 }
 
 #header {
@@ -104,13 +108,13 @@ div.word {
 }
 
 @keyframes blink {
-  0%{
+  0% {
     opacity: 1;
   }
-  50%{
+  50% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -122,17 +126,16 @@ div.word {
   background: var(--primaryColor);
   position: fixed;
   top: 198px;
-  left: 365px;
+
   animation: blink 1s infinite;
 }
 
-#game:focus #cursor{
+#game:focus #cursor {
   display: block;
-  
 }
 
-#game.over #words{
-  opacity: .5;
+#game.over #words {
+  opacity: 0.5;
   filter: blur(0px);
 }
 
@@ -145,12 +148,12 @@ div.word {
 }
 
 #cursor.right {
-  transition: left 0.3s ease
+  transition: left 0.3s ease;
 }
 
 #instructions {
   font-size: 1rem;
-  color: var(--tertiaryColor);
+  color: var(--textPrimary);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   text-align: center;
@@ -165,6 +168,7 @@ div.word {
   position: fixed;
   left: -1200px;
   top: 275px;
+  text-align: center;
   transform: rotate(90deg);
   overflow: hidden;
 }

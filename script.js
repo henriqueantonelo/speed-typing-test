@@ -1,8 +1,8 @@
 const tween = KUTE.fromTo(
-  '#blob1',
-  { path: '#blob1' },
-  { path: '#blob2' },
-  { repeat: 999, duration: 5500, yoyo: true}
+  "#blob1",
+  { path: "#blob1" },
+  { path: "#blob2" },
+  { repeat: 999, duration: 5500, yoyo: true }
 ).start();
 
 const words =
@@ -12,17 +12,17 @@ const words =
 
 const wordsCount = words.length;
 const gameTime = 30 * 1000;
-window.gameStart = null
+window.gameStart = null;
 
-function restartTimer () {
-  clearTimeout()
+function restartTimer() {
+  clearTimeout();
 }
 
-function addClass(el,name) {
-  el.className += ' '+name;
+function addClass(el, name) {
+  el.className += " " + name;
 }
-function removeClass(el,name) {
-  el.className = el.className.replace(name,'');
+function removeClass(el, name) {
+  el.className = el.className.replace(name, "");
 }
 
 function randomWords() {
@@ -42,172 +42,187 @@ function newGame() {
   }
   addClass(document.querySelector(".word"), "current");
   addClass(document.querySelector(".letter"), "current");
-  document.getElementById('info').innerHTML = (gameTime / 1000)
+  document.getElementById("info").innerHTML = gameTime / 1000;
   window.timer = null;
 }
 
 function getWpm() {
-  const words = [...document.querySelectorAll('.word')]
-  const lastTypedWord = document.querySelector('.word.current')
-  const lastTypedWordIndex = words.indexOf(lastTypedWord)
-  const typedWords =  words.slice(0, lastTypedWordIndex)
-  const correctWords = typedWords.filter(words => {
-    const letters = [...words.children]
-    const incorrectLetters = letters.filter(letter => letter.className.includes('incorrect'))
-    const correctLetters = letters.filter(letter => letter.className.includes('correct'))
-    return incorrectLetters.length === 0 && correctLetters.length === letters.length
-  })
-  return correctWords.length / gameTime * 60000;
+  const words = [...document.querySelectorAll(".word")];
+  const lastTypedWord = document.querySelector(".word.current");
+  const lastTypedWordIndex = words.indexOf(lastTypedWord);
+  const typedWords = words.slice(0, lastTypedWordIndex);
+  const correctWords = typedWords.filter((words) => {
+    const letters = [...words.children];
+    const incorrectLetters = letters.filter((letter) =>
+      letter.className.includes("incorrect")
+    );
+    const correctLetters = letters.filter((letter) =>
+      letter.className.includes("correct")
+    );
+    return (
+      incorrectLetters.length === 0 && correctLetters.length === letters.length
+    );
+  });
+  return (correctWords.length / gameTime) * 60000;
 }
 function gameOver() {
   clearInterval(window.timer);
-  addClass(document.getElementById('game'), 'over')
-  document.getElementById('info').innerHTML = `WPM: ${getWpm()}`;
+  addClass(document.getElementById("game"), "over");
+  document.getElementById("info").innerHTML = `WPM: ${getWpm()}`;
 }
 
-function restartGame () {
+function restartGame() {
   document.getElementById("game").addEventListener("keydown", (ev) => {
     const key = ev.key;
-    const currentWord = document.querySelector('.word.current')
+    const currentWord = document.querySelector(".word.current");
     const currentLetter = document.querySelector(".letter.current");
     const expected = currentLetter?.innerHTML || " ";
-    const isLetter = key.length === 1 && key !== ' ';
-    const isSpace = key === ' ';
-    const isBackspace = key === 'Backspace'
+    const isLetter = key.length === 1 && key !== " ";
+    const isSpace = key === " ";
+    const isBackspace = key === "Backspace";
     const isFirstLetter = currentLetter === currentWord.firstChild;
-  
-    if (document.querySelector('#game.over')) {
+
+    if (document.querySelector("#game.over")) {
       return;
     }
-  
-  if(!window.timer && isLetter) {
-    window.timer = setInterval(() => {
-      if (!window.gameStart) {
-        window.gameStart = (new Date()).getTime();
-      }
-      const currentTime = (new Date()).getTime();
-      const msPassed = currentTime - window.gameStart;
-      const sPassed = Math.round(msPassed / 1000)
-      const sLeft = (gameTime / 1000) - sPassed
-      if (sLeft <= 0) {
-        gameOver();
-        return;
-      }
-      document.getElementById('info').innerHTML = sLeft + ''
-    }, 1000)
-  }
-  
-  if (isLetter) {
-    if (currentLetter) {
-      addClass(currentLetter, key === expected ? 'correct' : 'incorrect');
-      removeClass(currentLetter, 'current');
-      if (currentLetter.nextSibling) {
-        addClass(currentLetter.nextSibling, 'current');
-      }
-    } else {
-      if (expected !== ' ') {
-        if (currentWord.lastChild.className.includes('extra')) {
-          currentWord.removeChild(currentWord.lastChild);
+
+    if (!window.timer && isLetter) {
+      window.timer = setInterval(() => {
+        if (!window.gameStart) {
+          window.gameStart = new Date().getTime();
         }
-        const incorrectLetter = document.createElement('span');
-        incorrectLetter.innerHTML = key;
-        incorrectLetter.className = 'letter incorrect extra';
-        currentWord.appendChild(incorrectLetter);
-      }
+        const currentTime = new Date().getTime();
+        const msPassed = currentTime - window.gameStart;
+        const sPassed = Math.round(msPassed / 1000);
+        const sLeft = gameTime / 1000 - sPassed;
+        if (sLeft <= 0) {
+          gameOver();
+          return;
+        }
+        document.getElementById("info").innerHTML = sLeft + "";
+      }, 1000);
     }
-  }
-  
-    if (isSpace) {
-      if(expected !== '') {
-        const lettersToInvalidate = [...document.querySelectorAll('.word.current .letter:not(.correct)')]
-        lettersToInvalidate.forEach(letter => {
-          addClass(letter, 'incorrect')
-        })
-      }
-      removeClass(currentWord, 'current')
-      addClass(currentWord.nextSibling, 'current')
+
+    if (isLetter) {
       if (currentLetter) {
-        removeClass(currentLetter, 'current')
+        addClass(currentLetter, key === expected ? "correct" : "incorrect");
+        removeClass(currentLetter, "current");
+        if (currentLetter.nextSibling) {
+          addClass(currentLetter.nextSibling, "current");
+        }
+      } else {
+        if (expected !== " ") {
+          if (currentWord.lastChild.className.includes("extra")) {
+            currentWord.removeChild(currentWord.lastChild);
+          }
+          const incorrectLetter = document.createElement("span");
+          incorrectLetter.innerHTML = key;
+          incorrectLetter.className = "letter incorrect extra";
+          currentWord.appendChild(incorrectLetter);
+        }
       }
-      addClass(currentWord.nextSibling.firstChild, 'current')
     }
-  
+
+    if (isSpace) {
+      if (expected !== "") {
+        const lettersToInvalidate = [
+          ...document.querySelectorAll(".word.current .letter:not(.correct)"),
+        ];
+        lettersToInvalidate.forEach((letter) => {
+          addClass(letter, "incorrect");
+        });
+      }
+      removeClass(currentWord, "current");
+      addClass(currentWord.nextSibling, "current");
+      if (currentLetter) {
+        removeClass(currentLetter, "current");
+      }
+      addClass(currentWord.nextSibling.firstChild, "current");
+    }
+
     if (isBackspace) {
       if (currentLetter && isFirstLetter) {
         // fazendo a palavra anterior ser atual, ultima letra atual
-        removeClass(currentWord, 'current')
-        addClass(currentWord.previousSibling, 'current')
-        removeClass(currentLetter, 'current')
-        addClass(currentWord.previousSibling.lastChild, 'current')
-        removeClass(currentWord.previousSibling.lastChild, 'incorrect')
-        removeClass(currentWord.previousSibling.lastChild, 'correct')
+        removeClass(currentWord, "current");
+        addClass(currentWord.previousSibling, "current");
+        removeClass(currentLetter, "current");
+        addClass(currentWord.previousSibling.lastChild, "current");
+        removeClass(currentWord.previousSibling.lastChild, "incorrect");
+        removeClass(currentWord.previousSibling.lastChild, "correct");
       }
       if (currentLetter && !isFirstLetter) {
         // voltando uma letra, invalidando letra
-        removeClass(currentLetter, 'current')
-        addClass(currentLetter.previousSibling, 'current')
-        removeClass(currentLetter.previousSibling, 'incorrect')
-        removeClass(currentLetter.previousSibling, 'correct')
+        removeClass(currentLetter, "current");
+        addClass(currentLetter.previousSibling, "current");
+        removeClass(currentLetter.previousSibling, "incorrect");
+        removeClass(currentLetter.previousSibling, "correct");
       }
       if (!currentLetter) {
-        addClass(currentWord.lastChild, 'current')
-        removeClass(currentWord.lastChild, 'incorrect')
-        removeClass(currentWord.lastChild, 'correct')
+        addClass(currentWord.lastChild, "current");
+        removeClass(currentWord.lastChild, "incorrect");
+        removeClass(currentWord.lastChild, "correct");
       }
     }
-  
+
     // movendo as linhas / palavras
     if (currentWord.getBoundingClientRect().top > 260) {
-      const words = document.getElementById('words')
-      const margin = parseInt(words.style.marginTop || '0px');
-      words.style.marginTop = (margin - 37) + 'px';
+      const words = document.getElementById("words");
+      const margin = parseInt(words.style.marginTop || "0px");
+      words.style.marginTop = margin - 37 + "px";
     }
-  
+
     // movimentando cursor
-    const nextLetter = document.querySelector('.letter.current')
-    const nextWord = document.querySelector('.word.current')
-    const cursor = document.getElementById('cursor')
-    cursor.style.transition = 'left .1s ease' 
-    cursor.style.top = (nextLetter || nextWord).getBoundingClientRect(). top + 2 + 'px'
-    cursor.style.left = (nextLetter || nextWord).getBoundingClientRect()[nextLetter ? 'left' : 'right'] + 'px'
+    const nextLetter = document.querySelector(".letter.current");
+    const nextWord = document.querySelector(".word.current");
+    const cursor = document.getElementById("cursor");
+    cursor.style.transition = "left .1s ease";
+    cursor.style.top =
+      (nextLetter || nextWord).getBoundingClientRect().top + 2 + "px";
+    cursor.style.left =
+      (nextLetter || nextWord).getBoundingClientRect()[
+        nextLetter ? "left" : "right"
+      ] + "px";
   });
-  return
+  return;
 }
 
 function restartGameNew() {
   document.getElementById("words").innerHTML = "";
   clearInterval(window.timer);
   window.timer = null;
-  removeClass(document.getElementById('game'), 'over');
-  document.getElementById('info').innerHTML = (gameTime / 1000);
+  removeClass(document.getElementById("game"), "over");
+  document.getElementById("info").innerHTML = gameTime / 1000;
   newGame();
   window.gameStart = null;
 
-  document.getElementById('words').style.marginTop = '0';
+  document.getElementById("words").style.marginTop = "0";
 
-  cursor.style.top = '198px'
-  cursor.style.left = '363px'
+  cursor.style.top = "198px";
+  cursor.style.left = "363px";
 }
 
-document.getElementById('newGameBtn').addEventListener('click', () => {
+document.getElementById("newGameBtn").addEventListener("click", () => {
   restartGameNew();
-})
+});
 
-restartGame()
+restartGame();
 newGame();
 
-// AFAZERES // 
-/*
-1 - O foco deve começar no texto, e desaparecer após 10 segundos em caso de inatividade
-2 - Adicionar um icone ao botão New Game e fazer com que ele não resete a página, mas resete apenas o jogo.
-3 - Adicionar transição na carret, entre as letras.
-4 - Arrumar o design inteiro do site
+const gameWrapper = document.querySelector("#game-wrapper");
+gameWrapper.focus();
 
-//PENSAMENTOS//
-Talvez o foco tenha que ser arrumado por inteiro, usando uma função ao invés de fazer tudo no css
-Usar o window.onload
+const btn = document.querySelector("#newGameBtn");
+const resetFocus = () => {
+  document.activeElement.blur();
+  document.querySelector("#game").focus();
+};
 
-Se a proxima letra for space, ultimo parente ! space, não deixa a letra vermelha
-*/
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    resetFocus();
+  }
+});
 
-// if (nextLetter === space)  
+btn.addEventListener("click", (event) => {
+  resetFocus();
+});
