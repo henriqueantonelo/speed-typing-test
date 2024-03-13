@@ -125,8 +125,6 @@ div.word {
   height: 1.6rem;
   background: var(--primaryColor);
   position: fixed;
-  top: 198px;
-
   animation: blink 1s infinite;
 }
 
@@ -166,11 +164,11 @@ div.word {
 .blob-motion {
   z-index: -1;
   position: fixed;
-  left: -1200px;
-  top: 275px;
-  text-align: center;
-  transform: rotate(90deg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -10%) rotate(90deg);
   overflow: hidden;
+  width: 200vw;
 }
 
 #blob1 {
