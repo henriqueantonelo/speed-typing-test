@@ -7,16 +7,24 @@
   --tertiaryColor: rgb(182, 182, 182);
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--bgcolor);
   color: var(--textPrimary);
   font-size: 1.4rem;
+  overflow: hidden;
 }
 
 main {
-  width: 600px;
+  width: 800px;
   margin: 50px auto;
+  height: 100%;
 }
 
 h1 {
@@ -163,15 +171,23 @@ div.word {
 
 .blob-motion {
   z-index: -1;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -10%) rotate(90deg);
-  overflow: hidden;
-  width: 200vw;
+  position: relative;
+  transform: translate(-40%, -20%) rotate(90deg);
+  overflow: hidden; ;
 }
 
 #blob1 {
   fill: var(--primaryColor);
   filter: blur(4px);
+}
+
+#blobbob {
+  pointer-events: none;
+}
+
+.first-letter {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: red;
 }

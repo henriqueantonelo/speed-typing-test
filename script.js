@@ -165,7 +165,7 @@ function restartGame() {
     }
 
     // movendo as linhas / palavras
-    if (currentWord.getBoundingClientRect().top > 260) {
+    if (currentWord.getBoundingClientRect().top > 250) {
       const words = document.getElementById("words");
       const margin = parseInt(words.style.marginTop || "0px");
       words.style.marginTop = margin - 37 + "px";
@@ -197,12 +197,11 @@ function restartGameNew() {
 
   document.getElementById("words").style.marginTop = "0";
 
-  cursor.style.top = "198px";
-  cursor.style.left = "363px";
 }
 
 document.getElementById("newGameBtn").addEventListener("click", () => {
   restartGameNew();
+  addClass(cursor)
 });
 
 restartGame();
