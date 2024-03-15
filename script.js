@@ -1,3 +1,4 @@
+// Blob motion
 const tween = KUTE.fromTo(
   "#blob1",
   { path: "#blob1" },
@@ -10,8 +11,8 @@ const words =
     " "
   );
 
-const wordsCount = words.length;
-const gameTime = 30 * 1000;
+  const wordsCount = words.length;
+  const gameTime = 5 * 1000;
 window.gameStart = null;
 
 function restartTimer() {
@@ -54,7 +55,7 @@ function getWpm() {
   const correctWords = typedWords.filter((words) => {
     const letters = [...words.children];
     const incorrectLetters = letters.filter((letter) =>
-      letter.className.includes("incorrect")
+    letter.className.includes("incorrect")
     );
     const correctLetters = letters.filter((letter) =>
       letter.className.includes("correct")
@@ -65,13 +66,24 @@ function getWpm() {
   });
   return (correctWords.length / gameTime) * 60000;
 }
+
+function removeRed () {
+  removeClass(document.getElementById('blob1'), 'blob-red');
+}
+
+function addBlue () {
+  addClass(document.getElementById('blob1'), 'blob-blue');
+}
+
 function gameOver() {
   clearInterval(window.timer);
   addClass(document.getElementById("game"), "over");
   document.getElementById("info").innerHTML = `WPM: ${getWpm()}`;
+
+  console.log('red')
 }
 
-function restartGame() {
+function startGame() {
   document.getElementById("game").addEventListener("keydown", (ev) => {
     const key = ev.key;
     const currentWord = document.querySelector(".word.current");
@@ -182,46 +194,40 @@ function restartGame() {
       (nextLetter || nextWord).getBoundingClientRect()[
         nextLetter ? "left" : "right"
       ] + "px";
-  });
-  return;
-}
 
-function restartGameNew() {
-  document.getElementById("words").innerHTML = "";
-  clearInterval(window.timer);
-  window.timer = null;
-  removeClass(document.getElementById("game"), "over");
-  document.getElementById("info").innerHTML = gameTime / 1000;
+      
+    });
+    return;
+  }
+  function restartGame() {
+    document.getElementById("words").innerHTML = "";
+    clearInterval(window.timer);
+    window.timer = null;
+    removeClass(document.getElementById("game"), "over");
+    document.getElementById("info").innerHTML = gameTime / 1000;
   newGame();
   window.gameStart = null;
 
   document.getElementById("words").style.marginTop = "0";
-
 }
-
-document.getElementById("newGameBtn").addEventListener("click", () => {
-  restartGameNew();
-  addClass(cursor)
-});
-
-restartGame();
-newGame();
 
 const gameWrapper = document.querySelector("#game-wrapper");
 gameWrapper.focus();
-
-const btn = document.querySelector("#newGameBtn");
 const resetFocus = () => {
-  document.activeElement.blur();
-  document.querySelector("#game").focus();
+ document.activeElement.blur();
+ document.querySelector("#game").focus();
 };
-
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    resetFocus();
-  }
+ if (event.key === "Escape") {
+   resetFocus();
+ }
 });
 
-btn.addEventListener("click", (event) => {
+document.getElementById("newGameBtn").addEventListener("click", (event) => {
+  restartGame();
   resetFocus();
 });
+
+startGame();
+newGame();
+resetFocus();
