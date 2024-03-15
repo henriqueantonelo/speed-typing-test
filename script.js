@@ -15,6 +15,19 @@ const wordsCount = words.length;
 const gameTime = 15 * 1000;
 window.gameStart = null;
 
+function moveCursor() {
+  const nextLetter = document.querySelector(".letter.current");
+  const nextWord = document.querySelector(".word.current");
+  const cursor = document.getElementById("cursor");
+  cursor.style.transition = "left .1s ease";
+  cursor.style.top =
+    (nextLetter || nextWord).getBoundingClientRect().top + 2 + "px";
+  cursor.style.left =
+    (nextLetter || nextWord).getBoundingClientRect()[
+      nextLetter ? "left" : "right"
+    ] + "px";
+}
+
 function restartTimer() {
   clearTimeout();
 }
@@ -67,20 +80,10 @@ function getWpm() {
   return (correctWords.length / gameTime) * 60000;
 }
 
-function removeRed() {
-  removeClass(document.getElementById("blob1"), "blob-red");
-}
-
-function addBlue() {
-  addClass(document.getElementById("blob1"), "blob-blue");
-}
-
 function gameOver() {
   clearInterval(window.timer);
   addClass(document.getElementById("game"), "over");
   document.getElementById("info").innerHTML = `WPM: ${getWpm()}`;
-
-  console.log("red");
 }
 
 function startGame() {
@@ -184,16 +187,7 @@ function startGame() {
     }
 
     // movimentando cursor
-    const nextLetter = document.querySelector(".letter.current");
-    const nextWord = document.querySelector(".word.current");
-    const cursor = document.getElementById("cursor");
-    cursor.style.transition = "left .1s ease";
-    cursor.style.top =
-      (nextLetter || nextWord).getBoundingClientRect().top + 2 + "px";
-    cursor.style.left =
-      (nextLetter || nextWord).getBoundingClientRect()[
-        nextLetter ? "left" : "right"
-      ] + "px";
+    moveCursor();
   });
   return;
 }
@@ -224,6 +218,7 @@ document.addEventListener("keydown", (event) => {
 document.getElementById("newGameBtn").addEventListener("click", (event) => {
   restartGame();
   resetFocus();
+  moveCursor();
 });
 
 startGame();
