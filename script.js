@@ -12,7 +12,7 @@ const words =
   );
 
   const wordsCount = words.length;
-  const gameTime = 5 * 1000;
+  const gameTime = 15 * 1000;
 window.gameStart = null;
 
 function restartTimer() {

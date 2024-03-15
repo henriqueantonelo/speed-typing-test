@@ -157,6 +157,7 @@ div.word {
 }
 
 #results {
+  visibility: hidden;
   margin-top: 50px;
   font-size: 2rem;
   color: var(--textPrimary);
