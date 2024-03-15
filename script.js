@@ -11,8 +11,8 @@ const words =
     " "
   );
 
-  const wordsCount = words.length;
-  const gameTime = 15 * 1000;
+const wordsCount = words.length;
+const gameTime = 15 * 1000;
 window.gameStart = null;
 
 function restartTimer() {
@@ -55,7 +55,7 @@ function getWpm() {
   const correctWords = typedWords.filter((words) => {
     const letters = [...words.children];
     const incorrectLetters = letters.filter((letter) =>
-    letter.className.includes("incorrect")
+      letter.className.includes("incorrect")
     );
     const correctLetters = letters.filter((letter) =>
       letter.className.includes("correct")
@@ -67,12 +67,12 @@ function getWpm() {
   return (correctWords.length / gameTime) * 60000;
 }
 
-function removeRed () {
-  removeClass(document.getElementById('blob1'), 'blob-red');
+function removeRed() {
+  removeClass(document.getElementById("blob1"), "blob-red");
 }
 
-function addBlue () {
-  addClass(document.getElementById('blob1'), 'blob-blue');
+function addBlue() {
+  addClass(document.getElementById("blob1"), "blob-blue");
 }
 
 function gameOver() {
@@ -80,7 +80,7 @@ function gameOver() {
   addClass(document.getElementById("game"), "over");
   document.getElementById("info").innerHTML = `WPM: ${getWpm()}`;
 
-  console.log('red')
+  console.log("red");
 }
 
 function startGame() {
@@ -194,17 +194,15 @@ function startGame() {
       (nextLetter || nextWord).getBoundingClientRect()[
         nextLetter ? "left" : "right"
       ] + "px";
-
-      
-    });
-    return;
-  }
-  function restartGame() {
-    document.getElementById("words").innerHTML = "";
-    clearInterval(window.timer);
-    window.timer = null;
-    removeClass(document.getElementById("game"), "over");
-    document.getElementById("info").innerHTML = gameTime / 1000;
+  });
+  return;
+}
+function restartGame() {
+  document.getElementById("words").innerHTML = "";
+  clearInterval(window.timer);
+  window.timer = null;
+  removeClass(document.getElementById("game"), "over");
+  document.getElementById("info").innerHTML = gameTime / 1000;
   newGame();
   window.gameStart = null;
 
@@ -214,13 +212,13 @@ function startGame() {
 const gameWrapper = document.querySelector("#game-wrapper");
 gameWrapper.focus();
 const resetFocus = () => {
- document.activeElement.blur();
- document.querySelector("#game").focus();
+  document.activeElement.blur();
+  document.querySelector("#game").focus();
 };
 document.addEventListener("keydown", (event) => {
- if (event.key === "Escape") {
-   resetFocus();
- }
+  if (event.key === "Escape") {
+    resetFocus();
+  }
 });
 
 document.getElementById("newGameBtn").addEventListener("click", (event) => {
