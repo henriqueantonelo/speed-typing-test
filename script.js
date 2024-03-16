@@ -3,7 +3,7 @@ const tween = KUTE.fromTo(
   "#blob1",
   { path: "#blob1" },
   { path: "#blob2" },
-  { repeat: 999, duration: 5500, yoyo: true }
+  { repeat: 999, duration: 8000, yoyo: true }
 ).start();
 
 const words =
@@ -180,7 +180,7 @@ function startGame() {
     }
 
     // movendo as linhas / palavras
-    if (currentWord.getBoundingClientRect().top > 250) {
+    if (currentWord.getBoundingClientRect().top > 400) {
       const words = document.getElementById("words");
       const margin = parseInt(words.style.marginTop || "0px");
       words.style.marginTop = margin - 37 + "px";

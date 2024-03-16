@@ -7,7 +7,8 @@
   --tertiaryColor: rgb(182, 182, 182);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   max-height: 100vw;
@@ -26,11 +27,6 @@ main {
   height: 100%;
 }
 
-h1 {
-  color: var(--primaryColor);
-  text-align: center;
-}
-
 #game-wrapper {
   outline: none;
 }
@@ -39,6 +35,7 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 20px 6px 30px;
+  margin-top: 200px;
 }
 
 #buttons {
@@ -185,7 +182,7 @@ div.word {
   z-index: -1;
   position: fixed;
   transform: translate(-40%, -20%) rotate(90deg);
-  overflow: hidden; ;
+  overflow: hidden;
 }
 
 #blob1 {
@@ -198,4 +195,50 @@ div.word {
 
 #blob-container {
   pointer-events: none;
+}
+
+.navbar {
+  background-color: #333;
+  position: relative;
+  z-index: 999;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: var(--bgcolor);
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar li a {
+  color: white;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.navbar ul ul {
+  position: absolute;
+  top: 100%;
+  display: none;
+  z-index: 1000;
+  left: 300px;
+}
+
+.navbar ul ul li {
+  align-items: center;
+}
+
+.navbar li:hover ul {
+  display: block;
+  background-color: red;
+}
+
+.navbar ul ul li a:hover {
+  background-color: #555;
 }
