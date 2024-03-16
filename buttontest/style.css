@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
+body{
+  margin:0;
+  padding:0;
+  background-color:#292929;
+  font-family: 'Montserrat', sans-serif;
+}
+#wrapper{
+  width:100vw;
+  height:100vh;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.my-super-cool-btn{
+  position:relative;
+  text-decoration:none;
+  color:#fff;
+  letter-spacing:1px;
+  font-size:2rem;
+  box-sizing:border-box;
+}
+
+.my-super-cool-btn span{
+  position:relative;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:200px;
+  height:200px;
+} 
+
+.my-super-cool-btn span:before{
+  display:block;
+  position:absolute;
+  box-sizing:border-box;
+}
+.my-super-cool-btn .dots-container{
+  opacity:0;
+  animation: intro 1.6s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn .dot{
+  width:8px;
+  height:8px;
+  display:block;
+  background-color: #fff;
+  border-radius:100%;
+  position:absolute;
+  transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+/* animação */
+
+.my-super-cool-btn .dot:nth-child(1){
+  top:50px;
+  left:50px;
+  transform:rotate(90deg);
+  animation: swag1-out 0.7s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(2){
+  top:50px;
+  right:50px;
+  transform:rotate(55deg);
+  animation: swag2-out 0.7s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+.my-super-cool-btn .dot:nth-child(3){
+  bottom:50px;
+  left:50px;
+  transform:rotate(-55deg);
+  animation: swag3-out 0.7s;
+  animation-fill-mode: forwards;
+  opacity:0;
+}
+
+/* fim da animação */
+
+.my-super-cool-btn:hover .dot:nth-child(1){
+  animation: swag1 1s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:hover .dot:nth-child(2){
+  animation: swag2 1s;
+  animation-fill-mode: forwards;
+}
+.my-super-cool-btn:hover .dot:nth-child(3){
+  animation: swag3 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes intro {
+   0% {
+     opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+
+@keyframes swag1 {
+   0% {
+     top: 100px;
+     left:95px;
+     width:8px;
+  }
+  50% {
+    width:8px;
+    opacity:1;
+  }
+  100% {
+     top:172px;
+     left: 97px;
+     width:8px;
+     opacity:1;
+  }
+}
+
+@keyframes swag1-out {
+   0% {
+     top:172px;
+     left:97px;
+     width:8px;
+  }
+  50% {
+     width:8px;
+    opacity:1;
+  }
+  100% {
+     top:100px;
+     left:95px;
+     width:8px;
+    opacity:1;
+  }
+}
+
+@keyframes swag2 {
+   0% {
+     top:100px;
+     right:90px;
+     width:8px;
+  }
+  50% {
+    width:8px;
+    opacity:1;
+  }
+  100% {
+     top:172px;
+     right:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag2-out {
+   0% {
+     top:172px;
+     right:20px;
+     width:8px;
+  }
+  50% {
+     width:8px;
+    opacity:1;
+  }
+  100% {
+     top:100px;
+     right:80px;
+     width:8px;
+    opacity:1;
+  }
+}
+
+@keyframes swag3 {
+   0% {
+     top:100px;
+     left:90px;
+     width:8px;
+  }
+  50% {
+    width:8px;
+    opacity:1;
+  }
+  100% {
+     top:172px;
+     left:20px;
+     width:8px;
+     opacity:1;
+  }
+}
+@keyframes swag3-out {
+   0% {
+     top:172px;
+     left:20px;
+     width:8px;
+  }
+  50% {
+     width:8px;
+    opacity:1;
+  }
+  100% {
+     top:100px;
+     left:80px;
+     width:8px;
+    opacity:1;
+  }
+}

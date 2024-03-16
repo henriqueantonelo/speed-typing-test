@@ -180,7 +180,7 @@ function startGame() {
     }
 
     // movendo as linhas / palavras
-    if (currentWord.getBoundingClientRect().top > 400) {
+    if (currentWord.getBoundingClientRect().top > 300) {
       const words = document.getElementById("words");
       const margin = parseInt(words.style.marginTop || "0px");
       words.style.marginTop = margin - 37 + "px";
