@@ -249,6 +249,10 @@ div.word {
   transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
 }
 
+.fa-gear {
+  visibility: hidden;
+}
+
 .dots-Btn .dot:nth-child(1) {
   top: 50px;
   left: 50px;
@@ -257,6 +261,7 @@ div.word {
   animation-fill-mode: forwards;
   opacity: 0;
 }
+
 .dots-Btn .dot:nth-child(2) {
   top: 50px;
   right: 50px;
@@ -279,6 +284,13 @@ div.word {
   animation-fill-mode: forwards;
   background-color: red;
 }
+
+.dots-Btn:hover .fa-gear {
+  display: block;
+  position: absolute;
+  visibility: visible;
+}
+
 .dots-Btn:hover .dot:nth-child(2) {
   animation: swag2 1s;
   animation-fill-mode: forwards;
@@ -374,14 +386,18 @@ div.word {
     width: 8px;
   }
   50% {
-    width: 8px;
+    /* width: 8px; */
     opacity: 1;
+    size: 15px;
+    height: 15px;
   }
   100% {
     top: 172px;
     left: 20px;
-    width: 8px;
+    /* width: 8px; */
     opacity: 1;
+    width: 20px;
+    height: 20px;
   }
 }
 @keyframes swag3-out {
