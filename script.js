@@ -228,9 +228,12 @@ resetFocus();
 const dot1 = document.getElementById("dot-1");
 const dot2 = document.getElementById("dot-2");
 const dot3 = document.getElementById("dot-3");
+const dot4 = document.getElementById("dot-4");
+const dot5 = document.getElementById("dot-5");
+const dot6 = document.getElementById("dot-6");
 const mainBtn = document.querySelector(".dots-Btn");
 
-dot1.addEventListener("click", function () {
+dot2.addEventListener("click", function () {
   console.log("dot1");
 });
 
@@ -240,4 +243,40 @@ dot2.addEventListener("click", function () {
 
 dot3.addEventListener("click", function () {
   console.log("dot3");
+});
+
+const dots = document.querySelectorAll(".dot");
+
+dots.forEach((dot) => {
+  dot.addEventListener("click", function () {
+    dot.classList.add("active");
+
+    setTimeout(function () {
+      dot.classList.remove("active");
+    }, 200);
+  });
+});
+
+dot4.addEventListener("click", function () {
+  dot1.classList.add("active");
+
+  setTimeout(function () {
+    dot1.classList.remove("active");
+  }, 200);
+});
+
+dot5.addEventListener("click", function () {
+  dot2.classList.add("active");
+
+  setTimeout(function () {
+    dot2.classList.remove("active");
+  }, 200);
+});
+
+dot6.addEventListener("click", function () {
+  dot3.classList.add("active");
+
+  setTimeout(function () {
+    dot3.classList.remove("active");
+  }, 200);
 });

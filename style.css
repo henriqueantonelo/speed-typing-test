@@ -213,10 +213,29 @@ div.word {
   position: relative;
   text-decoration: none;
   color: #fff;
+  height: 230px;
   letter-spacing: 1px;
   font-size: 2rem;
   box-sizing: border-box;
 }
+/* 
+fazendo o container do botão se expandir para a área de click ficar junto. 
+.dots-Btn:hover {
+  animation: expand 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+  0% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    height: 230px;
+  }
+} */
 
 .dots-Btn span {
   position: relative;
@@ -249,10 +268,6 @@ div.word {
   transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
 }
 
-.fa-gear {
-  visibility: hidden;
-}
-
 .dots-Btn .dot:nth-child(1) {
   top: 50px;
   left: 50px;
@@ -282,13 +297,6 @@ div.word {
 .dots-Btn:hover .dot:nth-child(1) {
   animation: swag1 1s;
   animation-fill-mode: forwards;
-  background-color: red;
-}
-
-.dots-Btn:hover .fa-gear {
-  display: block;
-  position: absolute;
-  visibility: visible;
 }
 
 .dots-Btn:hover .dot:nth-child(2) {
@@ -299,6 +307,7 @@ div.word {
   animation: swag3 1s;
   animation-fill-mode: forwards;
 }
+
 @keyframes intro {
   0% {
     opacity: 0;
@@ -311,29 +320,35 @@ div.word {
 @keyframes swag1 {
   0% {
     top: 100px;
-    left: 95px;
-    width: 8px;
+    left: 90px;
+    width: 10px;
+    height: 10px;
   }
   50% {
-    width: 8px;
+    width: 30px;
+    height: 25px;
     opacity: 1;
   }
   100% {
     top: 172px;
-    left: 97px;
-    width: 8px;
+    left: 85px;
     opacity: 1;
+    width: 35px;
+    height: 35px;
+    background-color: #666;
   }
 }
 
 @keyframes swag1-out {
   0% {
     top: 172px;
-    left: 97px;
-    width: 8px;
+    left: 85px;
+    opacity: 1;
+    width: 35px;
+    height: 25px;
+    background-color: #666;
   }
   50% {
-    width: 8px;
     opacity: 1;
   }
   100% {
@@ -347,28 +362,34 @@ div.word {
 @keyframes swag2 {
   0% {
     top: 100px;
-    right: 90px;
-    width: 8px;
+    right: 70px;
+    width: 10px;
+    height: 10px;
   }
   50% {
-    width: 8px;
+    width: 30px;
+    height: 25px;
     opacity: 1;
   }
   100% {
     top: 172px;
     right: 20px;
-    width: 8px;
     opacity: 1;
+    width: 35px;
+    height: 35px;
+    background-color: #666;
   }
 }
 @keyframes swag2-out {
   0% {
     top: 172px;
     right: 20px;
-    width: 8px;
+    opacity: 1;
+    width: 35px;
+    height: 25px;
+    background-color: #666;
   }
   50% {
-    width: 8px;
     opacity: 1;
   }
   100% {
@@ -382,32 +403,35 @@ div.word {
 @keyframes swag3 {
   0% {
     top: 100px;
-    left: 90px;
-    width: 8px;
+    left: 70px;
+    width: 10px;
+    height: 10px;
   }
   50% {
-    /* width: 8px; */
+    width: 30px;
+    height: 25px;
     opacity: 1;
-    size: 15px;
-    height: 15px;
   }
   100% {
     top: 172px;
     left: 20px;
-    /* width: 8px; */
     opacity: 1;
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
+    background-color: #666;
   }
 }
+
 @keyframes swag3-out {
   0% {
     top: 172px;
     left: 20px;
-    width: 8px;
+    opacity: 1;
+    width: 35px;
+    height: 25px;
+    background-color: #666;
   }
   50% {
-    width: 8px;
     opacity: 1;
   }
   100% {
@@ -415,5 +439,188 @@ div.word {
     left: 80px;
     width: 8px;
     opacity: 1;
+  }
+}
+
+.dot.active {
+  background-color: var(--primaryColor) !important;
+}
+
+.dots-Btn .dot:nth-child(4) {
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+.dots-Btn:hover .dot:nth-child(4) {
+  animation: swag4 1s;
+  animation-fill-mode: forwards;
+}
+
+.dots-Btn .dot:nth-child(4) {
+  bottom: 50px;
+  left: 80px;
+  animation: swag4-out 0.7s;
+  animation-fill-mode: forwards;
+  font-size: 8px;
+  visibility: hidden;
+}
+
+@keyframes swag4 {
+  0% {
+    top: 100px;
+    left: 75px;
+    visibility: hidden;
+  }
+  15% {
+    visibility: hidden;
+  }
+  100% {
+    top: 178px;
+    left: 28px;
+    opacity: 1;
+    font-size: 22px;
+    visibility: visible;
+  }
+}
+
+@keyframes swag4-out {
+  0% {
+    top: 178px;
+    left: 28px;
+    opacity: 1;
+    font-size: 22px;
+    visibility: visible;
+  }
+  85% {
+    visibility: hidden;
+  }
+  100% {
+    top: 100px;
+    opacity: 1;
+    visibility: hidden;
+  }
+}
+
+/* test language  */
+
+.dots-Btn .dot:nth-child(5) {
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+.dots-Btn:hover .dot:nth-child(5) {
+  animation: swag5 1s;
+  animation-fill-mode: forwards;
+}
+
+.dots-Btn .dot:nth-child(5) {
+  top: 50px;
+  left: 95px;
+  animation: swag5-out 0.7s;
+  animation-fill-mode: forwards;
+  font-size: 8px;
+  /* visibility: hidden; */
+}
+@keyframes swag5 {
+  0% {
+    top: 100px;
+    left: 90px;
+    visibility: hidden;
+  }
+  15% {
+    visibility: hidden;
+  }
+  100% {
+    top: 178.3px;
+    left: 91.5px;
+    opacity: 1;
+    font-size: 22px;
+    visibility: visible;
+  }
+}
+
+@keyframes swag5-out {
+  0% {
+    top: 179px;
+    left: 91.5px;
+    opacity: 1;
+    font-size: 22px;
+    visibility: visible;
+  }
+  85% {
+    visibility: hidden;
+  }
+  100% {
+    top: 100px;
+    opacity: 1;
+    visibility: hidden;
+  }
+}
+
+/* gamemode */
+
+.dots-Btn .dot:nth-child(6) {
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  transition: all 0.85s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+.dots-Btn:hover .dot:nth-child(6) {
+  animation: swag6 1s;
+  animation-fill-mode: forwards;
+}
+
+.dots-Btn .dot:nth-child(6) {
+  top: 50px;
+  right: 50px;
+  animation: swag6-out 0.7s;
+  animation-fill-mode: forwards;
+  font-size: 8px;
+  /* visibility: hidden; */
+}
+@keyframes swag6 {
+  0% {
+    top: 100px;
+    right: 70px;
+    visibility: hidden;
+  }
+  15% {
+    visibility: hidden;
+  }
+  100% {
+    top: 180px;
+    right: 42px;
+    opacity: 1;
+    font-size: 20px;
+    visibility: visible;
+  }
+}
+
+@keyframes swag6-out {
+  0% {
+    top: 180px;
+    right: 42px;
+    opacity: 1;
+    font-size: 22px;
+    visibility: visible;
+  }
+  50% {
+    visibility: visible;
+    font-size: 5px;
+  }
+  85% {
+    visibility: hidden;
+    transform: rotate(55deg);
+  }
+  100% {
+    top: 100px;
+    right: 79px;
+    opacity: 1;
+    visibility: hidden;
   }
 }
