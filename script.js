@@ -228,55 +228,61 @@ resetFocus();
 const dot1 = document.getElementById("dot-1");
 const dot2 = document.getElementById("dot-2");
 const dot3 = document.getElementById("dot-3");
-const dot4 = document.getElementById("dot-4");
-const dot5 = document.getElementById("dot-5");
-const dot6 = document.getElementById("dot-6");
-const mainBtn = document.querySelector(".dots-Btn");
-
-dot2.addEventListener("click", function () {
-  console.log("dot1");
-});
-
-dot2.addEventListener("click", function () {
-  console.log("dot2");
-});
-
-dot3.addEventListener("click", function () {
-  console.log("dot3");
-});
-
+const timesSelector = document.getElementById("dot-4");
+const language = document.getElementById("dot-5");
+const mode = document.getElementById("dot-6");
+const dotsBtn = document.querySelector(".dots-Btn");
+const times = document.querySelector(".times");
 const dots = document.querySelectorAll(".dot");
 
 dots.forEach((dot) => {
   dot.addEventListener("click", function () {
-    dot.classList.add("active");
+    dot.classList.add("orange");
 
     setTimeout(function () {
-      dot.classList.remove("active");
+      dot.classList.remove("orange");
     }, 200);
   });
 });
 
-dot4.addEventListener("click", function () {
-  dot1.classList.add("active");
+timesSelector.addEventListener("click", function () {
+  dot1.classList.add("orange");
+  // times.style.zIndex = 10;
 
   setTimeout(function () {
-    dot1.classList.remove("active");
+    dot1.classList.remove("orange");
   }, 200);
 });
 
-dot5.addEventListener("click", function () {
-  dot2.classList.add("active");
+language.addEventListener("click", function () {
+  dot2.classList.add("orange");
 
   setTimeout(function () {
-    dot2.classList.remove("active");
+    dot2.classList.remove("orange");
   }, 200);
 });
 
-dot6.addEventListener("click", function () {
-  dot3.classList.add("active");
+mode.addEventListener("click", function () {
+  dot3.classList.add("orange");
 
   setTimeout(function () {
-    dot3.classList.remove("active");
+    dot3.classList.remove("orange");
   }, 200);
 });
+
+dotsBtn.addEventListener("click", function () {
+  // Adicione ou remova a classe 'active' ao botão
+  dotsBtn.classList.add("active");
+});
+
+window.onclick = function (event) {
+  if (
+    event.target !== dotsBtn &&
+    event.target !== timesSelector &&
+    event.target !== language &&
+    event.target !== mode &&
+    !event.target.classList.contains("dot")
+  ) {
+    dotsBtn.classList.remove("active");
+  }
+};
