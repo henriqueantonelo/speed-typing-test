@@ -13,11 +13,10 @@
 
   </head>
   <body>
-    <main>
-    </div>
     <nav class="navbar" tabindex="-1">
       <div id="wrapper">
-        <a href="#" class="dots-Btn">
+        <a href="#" class="dots-Btn"
+        tabindex="-1" >
           <div class="dots-container">
             <div class="dot" id="dot-2"></div>
             <div class="dot" id="dot-3"></div>
@@ -27,15 +26,26 @@
             <i class="dot fa-solid fa-gamepad" id="dot-6"></i>
           </div>
           <span></span>
-          <div class="times">
-            <button>15</button>
-            <button>30</button>
-            <button>60</button>
+          <div class="times hidden">
+            <button id="fifteen" value="15">15</button>
+            <button id="thirty" value="30">30</button>
+            <button id="sixty"  value="60">60</button>
           </div>
-          
+          <!-- <div class="language hidden">
+            <button id="ptbr">PtBr</button>
+            <button id="eng">Eng</button>
+            <button id="soon">Soon</button>
+          </div>
+          <div class="gamemode hidden">
+            <button id="normal">Normal</button>
+            <button id="daily">Daily</button>
+            <button id="weekly">Weekly</button>
+          </div> -->
         </a>
       </div>
     </nav>
+    <main>
+    </div>
       <div id="header">
         <div id="info"></div>
         </div>
