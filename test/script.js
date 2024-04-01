@@ -15,14 +15,31 @@
 
 /// animation test
 
-const dotsBtn = document.querySelector(".dots-Btn");
+// const dotsBtn = document.querySelector(".dots-Btn");
 
-dotsBtn.addEventListener("click", function () {
-  dotsBtn.classList.add("active");
+// dotsBtn.addEventListener("click", function () {
+//   dotsBtn.classList.add("active");
+// });
+
+// window.onclick = function (event) {
+//   if (event.target !== dotsBtn && !event.target.classList.contains("dot")) {
+//     dotsBtn.classList.remove("active");
+//   }
+// };
+
+////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  const userContainer = document.querySelector(".user-container");
+  const dropbtn = document.querySelector(".dropbtn");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  dropbtn.addEventListener("click", function () {
+    userContainer.classList.toggle("open");
+    if (userContainer.classList.contains("open")) {
+      dropdownContent.style.width = dropbtn.offsetWidth + "px";
+    } else {
+      dropdownContent.style.width = dropbtn.offsetWidth + "px";
+    }
+  });
 });
-
-window.onclick = function (event) {
-  if (event.target !== dotsBtn && !event.target.classList.contains("dot")) {
-    dotsBtn.classList.remove("active");
-  }
-};
