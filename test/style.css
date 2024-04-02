@@ -1,8 +1,3 @@
-/* .notTest button {
-  background-color: orange;
-}
-
-/* ///// */
 :root {
   --bgcolor: rgb(42, 42, 42);
   --textPrimary: #fff;
@@ -18,63 +13,12 @@ body {
 .hidden {
   visibility: hidden;
 }
+/* .notTest button {
+  background-color: orange;
+}
 
 /* ///// */
-
-/* .grow {
-  background-color: #666;
-  border-radius: 20px;
-  height: 50px;
-  width: 60px;
-  float: left;
-  position: relative;
-  transition: height 0.5s;
-  -webkit-transition: height 0.5s;
-  text-align: center;
-}
-.grow:hover {
-  height: 115px;
-}
-
-.fa-share-nodes {
-  margin-top: 70px;
-  background-color: red;
-  padding: 10px;
-} */
-
-/* ////////////////////// */
-
-/* .user-container {
-  position: fixed;
-  display: flex;
-  right: 20px;
-  top: 10px;
-  gap: 10px;
-  cursor: pointer;
-  color: white;
-}
-
-.user-container .fa-solid {
-  margin: auto;
-  font-size: 16px;
-}
-
-.user-container p {
-  margin: auto;
-  font-size: 16px;
-}
-
-.user-container svg {
-  margin: auto;
-  height: 16px;
-  width: 16px;
-}
-
-option {
-  background-color: red;
-} */
-
-/* //////// */
+/* 
 .dropbtn {
   background-color: transparent;
   color: white;
@@ -116,20 +60,28 @@ option {
   display: block;
   background-color: #2a2a2a;
   margin-bottom: 7px;
+  text-align: center;
+  font-size: 21px;
 }
 
 .dropdown-content a:nth-child(1) {
   background-color: transparent;
   text-align: center;
   margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .dropdown-content a:nth-child(4) {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .dropdown-content a:last-child {
   margin-bottom: 20px;
+  color: #ff5555;
+}
+
+.dropdown-content a:last-child:hover {
+  color: rgb(255, 38, 38);
 }
 
 .dropdown-content a:hover {
@@ -163,6 +115,7 @@ option {
 .user-container .fa-solid {
   margin: auto;
   font-size: 16px;
+  text-align: left;
 }
 
 .user-container p {
@@ -170,13 +123,11 @@ option {
   font-size: 16px;
 }
 
-.user-container svg {
-  margin: auto;
-  height: 16px;
-  width: 16px;
+.fa-sliders {
+  rotate: 90deg;
 }
 
-.wrapp {
+.user-container-wrapper {
   position: fixed;
   right: 10px;
   top: 10px;
@@ -199,9 +150,109 @@ option {
 .dropdown-content .user-name {
   color: white;
   font-size: 15px;
+  cursor: pointer;
 }
 
-.dropdown-content .user-email {
+.dropdown-content .user-name:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content .action {
   color: #b7b7b7;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.leaderboard-icon {
+  width: 15px;
+  height: 20px;
+} */
+
+/* ///// */
+
+/* .grow {
+  background-color: #666;
+  border-radius: 20px;
+  height: 50px;
+  width: 60px;
+  float: left;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+}
+.grow:hover {
+  height: 115px;
+}
+
+.fa-share-nodes {
+  margin-top: 70px;
+  background-color: red;
+  padding: 10px;
+} */
+
+/* //////////////////////////////////////////////
+///////////////  */
+.sti_container {
+  position: relative;
+}
+
+.sti_container a {
+  color: white;
+  font-size: 21px;
+}
+
+.sti_container span {
+  color: white;
+  font-size: 21px;
+}
+
+.fa-hand-holding-heart {
+  padding-left: 25px;
+}
+
+.fa-github {
+  padding-left: 25px;
+}
+
+.fa-linkedin {
+  padding-left: 25px;
+}
+
+.fa-comment {
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  background-color: #202020;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 25px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.btn:hover {
+  background-color: #202020;
+}
+
+.btn .btn-text {
+  max-width: 0;
+  display: inline-block;
+  transition: color 0.25s 0.5s, max-width 1.5s;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn:hover .btn-text {
+  max-width: 350px;
+  color: white;
 }
