@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   max-height: 100vw;
+  overflow: hidden;
 }
 
 body {
@@ -798,6 +799,8 @@ div.word {
   height: 20px;
 }
 
+/* /////////////////////// */
+
 .sti_container {
   position: fixed;
   bottom: 50px;
@@ -835,7 +838,7 @@ div.word {
   position: relative;
   display: inline-block;
   padding: 15px;
-  background-color: #202020;
+  /* background-color: #202020; */
   cursor: pointer;
   outline: none;
   border: 0;
@@ -847,7 +850,12 @@ div.word {
   transition: width 0.5s;
 }
 
-.btn:hover {
+.sti_container .btn {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+.sti_container:hover .btn {
   background-color: #202020;
 }
 
@@ -863,4 +871,36 @@ div.word {
 .btn:hover .btn-text {
   max-width: 350px;
   color: white;
+}
+
+.transition-2 {
+  position: fixed;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  background-color: black;
+  transition: 0.5s ease-out;
+}
+
+.transition-2.is-active {
+  left: 0px;
+  top: 50px;
+  bottom: 0;
+}
+
+.transition-3 {
+  position: fixed;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  background-color: black;
+  transition: 0.5s ease-out;
+}
+
+.transition-3.is-active {
+  top: 50px;
 }

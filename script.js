@@ -1,10 +1,10 @@
 // Blob motion
-const tween = KUTE.fromTo(
-  "#blob1",
-  { path: "#blob1" },
-  { path: "#blob2" },
-  { repeat: 999, duration: 8000, yoyo: true }
-).start();
+// const tween = KUTE.fromTo(
+//   "#blob1",
+//   { path: "#blob1" },
+//   { path: "#blob2" },
+//   { repeat: 999, duration: 8000, yoyo: true }
+// ).start();
 
 const words =
   "cebola trem estrela vaso plantas de ursinho de pelúcia biscoito perna quando pode ser maior até hoje filme perder estar nem haver o nada usar possível isto sobre sem haver pequeno qualquer dever ajudar problema mulher agora tal eu jogo tipo nome elas fazer social de conseguir vez para trabalhar tão também qual então aquele mulher coisa contra tanto questão para novo palavra serviço esse cidade sem tentar como hora criar dia aquele".split(
@@ -383,3 +383,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const stiContainer = document.querySelector(".sti_container");
+  const btn = stiContainer.querySelector(".btn");
+
+  stiContainer.addEventListener("mouseenter", function () {
+    btn.style.backgroundColor = "#202020";
+  });
+
+  stiContainer.addEventListener("mouseleave", function () {
+    setTimeout(function () {
+      btn.style.backgroundColor = "transparent";
+    }, 1500);
+  });
+});
+
+window.onload = () => {
+  const anchors = document.querySelectorAll("a");
+  const transition_el = document.querySelector(".transition");
+
+  setTimeout(() => {
+    transition_el.classList.remove("is-active");
+  }, 500);
+
+  for (let i = 0; i < anchors.length; i++) {
+    const anchor = anchors[i];
+
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      let target = e.target.href;
+
+      console.log(transition_el);
+
+      transition_el.classList.add("is-active");
+
+      console.log(transition_el);
+
+      setInterval(() => {
+        window.location.href = target;
+      }, 500);
+    });
+  }
+};
