@@ -355,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const action = document.querySelector(".action");
   const username = document.querySelector(".user-name");
   const userProfilePic = document.querySelector(".fa-user-pen");
+  const leaderboardBtn = document.querySelector(".leaderboard-btn");
 
   dropbtn.addEventListener("click", function () {
     userContainer.classList.toggle("open");
@@ -382,6 +383,11 @@ document.addEventListener("DOMContentLoaded", function () {
       userContainer.classList.remove("open");
     }
   });
+  document.addEventListener("click", function (event) {
+    if (event.target == leaderboardBtn) {
+      userContainer.classList.remove("open");
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -406,6 +412,9 @@ window.onload = () => {
   setTimeout(() => {
     transition_el.classList.remove("is-active");
   }, 500);
+  setTimeout(() => {
+    transition_el.classList.add("is-mid");
+  }, 1000);
 
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];

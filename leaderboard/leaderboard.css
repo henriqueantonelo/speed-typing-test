@@ -709,21 +709,228 @@ td {
   padding: 10px;
 }
 
-.transition-2 {
-  position: fixed;
-  top: 70%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 101;
-  background-color: black;
-  transition: 0.5s ease-out;
+/* ////////////////// */
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
 }
 
-.transition-2.is-active {
-  left: 0px;
-  top: 50px;
-  bottom: 0;
+.user-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  background-color: #202020;
+  min-width: 111px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+  max-height: 0;
+  text-align: left;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.dropdown-content a {
+  color: var(--textSecondary);
+  font-weight: bold;
+  width: 100px;
+  border-radius: 12px;
+  padding: 5px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #2a2a2a;
+  margin-bottom: 7px;
+  text-align: center;
+  font-size: 21px;
+}
+
+.dropdown-content a:nth-child(1) {
+  background-color: transparent;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.dropdown-content a:nth-child(4) {
+  margin-top: 10px;
+}
+
+.dropdown-content a:last-child {
+  margin-bottom: 20px;
+  color: #ff5555;
+}
+
+.dropdown-content a:last-child:hover {
+  color: rgb(255, 38, 38);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--textSecondary);
+  color: white;
+}
+
+.user-container.open .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.user-container.open .dropdown-content {
+  max-height: 256px;
+}
+
+.user-container.open .dropbtn {
+  background-color: #444444;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.dropbtn {
+  display: flex;
+  right: 20px;
+  top: 10px;
+  gap: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.user-container .fa-solid {
+  margin: auto;
+  font-size: 16px;
+  text-align: left;
+}
+
+.user-container p {
+  margin: auto;
+  font-size: 16px;
+}
+
+.fa-sliders {
+  rotate: 90deg;
+}
+
+.user-container-wrapper {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.fa-right-from-bracket {
+  padding-right: 5px;
+}
+
+.fa-user-pen {
+  background-color: rgb(255, 255, 255);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  color: #202020;
+  border-radius: 100%;
+}
+
+.dropdown-content .user-name {
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content .user-name:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content .action {
+  color: #b7b7b7;
+  font-size: 12px;
+}
+
+.leaderboard-btn {
+  color: white;
+  font-size: 15px;
+}
+
+/* /////////////////////// */
+
+.sti_container {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+}
+
+.sti_container a {
+  color: white;
+  font-size: 21px;
+}
+
+.sti_container span {
+  color: white;
+  font-size: 21px;
+}
+
+.fa-hand-holding-heart {
+  padding-left: 25px;
+}
+
+.fa-github {
+  padding-left: 25px;
+}
+
+.fa-linkedin {
+  padding-left: 25px;
+}
+
+.fa-comment {
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  /* background-color: #202020; */
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 25px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.sti_container .btn {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+.sti_container:hover .btn {
+  background-color: #202020;
+}
+
+.btn .btn-text {
+  max-width: 0;
+  display: inline-block;
+  transition: color 0.25s 0.5s, max-width 1.5s;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn:hover .btn-text {
+  max-width: 350px;
+  color: white;
 }
 
 .transition-3 {
@@ -733,10 +940,16 @@ td {
   width: 100%;
   height: 100%;
   z-index: 101;
-  background-color: black;
   transition: 0.5s ease-out;
+  z-index: 1;
 }
 
 .transition-3.is-active {
-  top: 50px;
+  top: -40%;
+  z-index: 1;
+}
+
+.transition-3.is-mid {
+  top: 30%;
+  z-index: -1;
 }
