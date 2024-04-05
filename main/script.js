@@ -112,7 +112,7 @@ function gameOver() {
   );
 
   const twitter = document.querySelector(".twitter");
-  twitter.href = `http://twitter.com/share?&url=https://eggtype.vercel.app&text=${msg}&hashtags=speedtypingtest,eggtype`;
+  twitter.href = `http://twitter.com/share?&url=https://egg-type.vercel.app&text=${msg}&hashtags=speedtypingtest,eggtype`;
 }
 
 function startGame() {
