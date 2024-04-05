@@ -5,16 +5,20 @@
 //   { path: "#blob2" },
 //   { repeat: 999, duration: 8000, yoyo: true }
 // ).start();
-
-const words =
+const portugueseSelector = () =>
   "cebola trem estrela vaso plantas de ursinho de pelúcia biscoito perna quando pode ser maior até hoje filme perder estar nem haver o nada usar possível isto sobre sem haver pequeno qualquer dever ajudar problema mulher agora tal eu jogo tipo nome elas fazer social de conseguir vez para trabalhar tão também qual então aquele mulher coisa contra tanto questão para novo palavra serviço esse cidade sem tentar como hora criar dia aquele".split(
     " "
   );
+const englishSelector = () =>
+  "onion train star plant teddy bear cookie leg when can be bigger until today movie lose be neither to exist nothing use possible this about without to be small any duty to help problem woman now such I game type name they to do social to get time to work so also which then that woman thing against so much issue to new word service this city without to try how to create day that".split(
+    " "
+  );
+let words = portugueseSelector();
 
 const wordsCount = words.length;
 
 const gameTimeSelector = (tempo) => tempo * 1000;
-var gameTime = gameTimeSelector(30);
+var gameTime = gameTimeSelector(5);
 
 window.gameStart = null;
 
@@ -86,7 +90,26 @@ function getWpm() {
 function gameOver() {
   clearInterval(window.timer);
   addClass(document.getElementById("game"), "over");
-  document.getElementById("info").innerHTML = `WPM: ${getWpm()}`;
+  document.getElementById("info").innerHTML = "0";
+  document.querySelector(".test-wpm").innerHTML = `${getWpm()}`;
+  document.querySelector(".test-time").innerHTML = `${gameTime / 1000}`;
+  const results = document.getElementById("results");
+  ///// transition
+  const transition_el = document.querySelector(".transition");
+  transition_el.classList.remove("is-active");
+  transition_el.classList.add("end");
+  setTimeout(() => {
+    transition_el.classList.remove("end");
+    results.style.visibility = "visible";
+    results.style.zIndex = "999";
+  }, 1000);
+  //////  share
+  const pontos = getWpm();
+  console.log(pontos);
+  const msg = encodeURIComponent(`Hey i made ${pontos} WPM on eggtype`);
+
+  const twitter = document.querySelector(".twitter");
+  twitter.href = `http://twitter.com/share?&url=https://eggtype.vercel.app&text=${msg}&hashtags=speedtypingtest,eggtype`;
 }
 
 function startGame() {
@@ -204,6 +227,16 @@ function restartGame() {
   window.gameStart = null;
 
   document.getElementById("words").style.marginTop = "0";
+  const transition_el = document.querySelector(".transition");
+
+  transition_el.classList.remove("is-active");
+  transition_el.classList.add("end");
+  setTimeout(() => {
+    results.style.visibility = "hidden";
+  }, 500);
+  setTimeout(() => {
+    transition_el.classList.remove("end");
+  }, 1000);
 }
 
 const gameWrapper = document.querySelector("#game-wrapper");
@@ -228,19 +261,19 @@ startGame();
 newGame();
 resetFocus();
 
+////////////////
+
 const dot1id = document.getElementById("dot-1");
 const dot2id = document.getElementById("dot-2");
 const dot3id = document.getElementById("dot-3");
+////
 const timesSelector = document.getElementById("dot-4");
-const language = document.getElementById("dot-5");
-const mode = document.getElementById("dot-6");
+const langSelector = document.getElementById("dot-5");
+const modeSelector = document.getElementById("dot-6");
+////
 const dotsBtn = document.querySelector(".dots-Btn");
-const times = document.querySelector(".times");
 const dots = document.querySelectorAll(".dot");
-const fifteen = document.getElementById("fifteen");
-const thirty = document.getElementById("thirty");
-const sixty = document.getElementById("sixty");
-
+////
 dots.forEach((dot) => {
   dot.addEventListener("click", function () {
     dot.classList.add("orange");
@@ -251,12 +284,64 @@ dots.forEach((dot) => {
   });
 });
 
+///////
+// language
+///////
+const languages = document.querySelector(".language");
+const ptbr = document.getElementById("ptbr");
+const eng = document.getElementById("eng");
+const soon = document.getElementById("soon");
+
+langAppear = function () {
+  languages.style.zIndex = 10;
+  languages.classList.remove("hidden");
+
+  setTimeout(function () {
+    dot2id.classList.remove("orange");
+  }, 200);
+};
+langSelector.addEventListener("click", function () {
+  dot2id.classList.add("orange");
+
+  setTimeout(function () {
+    dot2id.classList.remove("orange");
+  }, 200);
+});
+
+langSelector.addEventListener("click", function () {
+  langAppear();
+});
+
+dot2id.addEventListener("click", function () {
+  langAppear();
+});
+
+ptbr.addEventListener("click", function () {
+  words = portugueseSelector();
+  restartGame();
+  resetFocus();
+  moveCursor();
+});
+
+eng.addEventListener("click", function () {
+  words = englishSelector();
+  restartGame();
+  resetFocus();
+  moveCursor();
+});
+///////
+// time
+///////
+
+const times = document.querySelector(".times");
+const fifteen = document.getElementById("fifteen");
+const thirty = document.getElementById("thirty");
+const sixty = document.getElementById("sixty");
+
 if (gameTime == 30 * 1000) {
   thirty.classList.add("orange-fixed");
 }
-
 timesAppear = function () {
-  dot1id.classList.add("orange");
   times.style.zIndex = 10;
   times.classList.remove("hidden");
 
@@ -312,15 +397,24 @@ sixty.addEventListener("click", function () {
   document.getElementById("info").innerHTML = gameTime / 1000;
 });
 
-language.addEventListener("click", function () {
-  dot2id.classList.add("orange");
+///////
+// mode
+///////
+const gamemode = document.querySelector(".gamemode");
+const normal = document.getElementById("normal");
+const daily = document.getElementById("daily");
+const weekly = document.getElementById("weekly");
+
+modeAppear = function () {
+  gamemode.style.zIndex = 10;
+  gamemode.classList.remove("hidden");
 
   setTimeout(function () {
-    dot2id.classList.remove("orange");
+    dot3id.classList.remove("orange");
   }, 200);
-});
+};
 
-mode.addEventListener("click", function () {
+modeSelector.addEventListener("click", function () {
   dot3id.classList.add("orange");
 
   setTimeout(function () {
@@ -328,6 +422,15 @@ mode.addEventListener("click", function () {
   }, 200);
 });
 
+modeSelector.addEventListener("click", function () {
+  modeAppear();
+});
+
+dot3id.addEventListener("click", function () {
+  modeAppear();
+});
+
+////////
 dotsBtn.addEventListener("click", function () {
   dotsBtn.classList.add("active");
 });
@@ -336,12 +439,14 @@ window.onclick = function (event) {
   if (
     event.target !== dotsBtn &&
     event.target !== timesSelector &&
-    event.target !== language &&
-    event.target !== mode &&
+    event.target !== langSelector &&
+    event.target !== modeSelector &&
     !event.target.classList.contains("dot")
   ) {
     dotsBtn.classList.remove("active");
     times.classList.add("hidden");
+    languages.classList.add("hidden");
+    gamemode.classList.add("hidden");
   }
 };
 
@@ -406,7 +511,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = () => {
-  const anchors = document.querySelectorAll("a");
+  const anchors = document.querySelectorAll(".leaderboard-btn");
   const transition_el = document.querySelector(".transition");
 
   setTimeout(() => {
@@ -423,11 +528,7 @@ window.onload = () => {
       e.preventDefault();
       let target = e.target.href;
 
-      console.log(transition_el);
-
       transition_el.classList.add("is-active");
-
-      console.log(transition_el);
 
       setInterval(() => {
         window.location.href = target;
@@ -435,3 +536,7 @@ window.onload = () => {
     });
   }
 };
+
+///////
+// separar
+//////

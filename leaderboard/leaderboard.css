@@ -857,6 +857,8 @@ td {
 .leaderboard-btn {
   color: white;
   font-size: 15px;
+  padding: 5px 5px;
+  z-index: 999;
 }
 
 /* /////////////////////// */
@@ -933,6 +935,10 @@ td {
   color: white;
 }
 
+.transition img {
+  width: 100%;
+}
+
 .transition-3 {
   position: fixed;
   top: 70%;
@@ -945,7 +951,7 @@ td {
 }
 
 .transition-3.is-active {
-  top: -40%;
+  top: -80%;
   z-index: 1;
 }
 

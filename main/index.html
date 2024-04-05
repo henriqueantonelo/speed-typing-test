@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="Twitter link preview image URL">
+    <meta property="twitter:title" content="Twitter link preview title">
+    <meta property="twitter:description" content="Twitter link preview description">
     <title>...</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
@@ -31,16 +35,16 @@
             <button id="thirty" value="30">30</button>
             <button id="sixty"  value="60">60</button>
           </div>
-          <!-- <div class="language hidden">
+          <div class="language hidden">
             <button id="ptbr">PtBr</button>
             <button id="eng">Eng</button>
             <button id="soon">Soon</button>
           </div>
           <div class="gamemode hidden">
-            <button id="normal">Normal</button>
-            <button id="daily">Daily</button>
-            <button id="weekly">Weekly</button>
-          </div> -->
+            <button id="normal" class="fa-solid fa-keyboard"></button>
+            <button id="daily"><img src="/daily.svg" alt=""></button>
+            <button id="weekly"><img src="/weekly.svg" alt=""></button>
+          </div>
         </a>
       </div>
       <div class="user-container-wrapper">
@@ -90,8 +94,18 @@
        <div id="buttons">
          <button id="newGameBtn" class="fa-solid fa-rotate-right" tabindex="0"></button>
          <div id="results" class="results">
-          <div id="wpm">150</div>
-          <div id="time">30s</div>
+          <div id="share-buttons">
+            <!-- twitter -->
+            <a class="twitter" target="blank"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div id="wpm">WPM
+            <div id="test-results" class="test-wpm"></div>
+          </div>
+
+          <div id="time">TIME
+            <div id="test-results" class="test-time"></div>
+          </div>
+
          </div>
           <div id="instructions">
               <p>Press tab + enter to restart</p>
