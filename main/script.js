@@ -18,7 +18,7 @@ let words = portugueseSelector();
 const wordsCount = words.length;
 
 const gameTimeSelector = (tempo) => tempo * 1000;
-var gameTime = gameTimeSelector(5);
+var gameTime = gameTimeSelector(30);
 
 window.gameStart = null;
 
@@ -105,8 +105,11 @@ function gameOver() {
   }, 1000);
   //////  share
   const pontos = getWpm();
+  const tempo = gameTime / 1000;
   console.log(pontos);
-  const msg = encodeURIComponent(`Hey i made ${pontos} WPM on eggtype`);
+  const msg = encodeURIComponent(
+    `Fiz ${pontos} WPM em ${tempo} segundos no eggtype!`
+  );
 
   const twitter = document.querySelector(".twitter");
   twitter.href = `http://twitter.com/share?&url=https://eggtype.vercel.app&text=${msg}&hashtags=speedtypingtest,eggtype`;
