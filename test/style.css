@@ -3,7 +3,14 @@
   --textPrimary: #fff;
   --textSecondary: #666;
   --primaryColor: rgb(255, 115, 0);
+  --secondaryColor: rgb(0, 255, 136);
   --tertiaryColor: rgb(182, 182, 182);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -282,7 +289,7 @@ body {
 } */
 /* ////////////////////// */
 
-#share-container span {
+/* #share-container span {
   display: block;
   margin: 3rem auto;
   font-size: 50px;
@@ -326,4 +333,77 @@ body {
 .whatsapp:hover,
 .telegram:hover {
   opacity: 0.9;
+} */
+
+/* ;;;;;;;;;;;;;; */
+
+path {
+  fill: red;
+}
+
+/* .container-svg2 {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  text-align: center;
+  overflow: hidden;
+  filter: blur(25px);
+}
+.container-svg2 img {
+  height: 100%;
+  width: 100%;
+} */
+
+.blobe path {
+  fill: var(--primaryColor);
+}
+
+.blobe {
+  position: fixed;
+  bottom: 0;
+  height: 30vh;
+  width: 120vw;
+  filter: blur(15px);
+}
+
+.default {
+  text-align: center;
+  font-size: 50px;
+  color: var(--secondaryColor);
+}
+
+i {
+  font-size: 50px;
+  color: var(--tertiaryColor);
+}
+
+.colors {
+  width: 100px;
+
+  position: absolute;
+  left: 46.5%;
+}
+
+.colors input {
+  border: none;
+  display: block;
+  margin-bottom: 10px;
+  width: 100px;
+}
+
+.primary {
+  background-color: var(--primaryColor);
+}
+
+.secondary {
+  background-color: var(--secondaryColor);
+}
+
+.tertiary {
+  background-color: var(--tertiaryColor);
+}
+
+.background {
+  background-color: var(--bgcolor);
 }

@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="/colorPicker/Coloris-0.23.0/dist/coloris.min.css"
+  />
+  <script src="/colorPicker/Coloris-0.23.0/dist/coloris.min.js"></script>
 
   </head>
   <body>
@@ -38,8 +43,8 @@
           </div>
           <div class="gamemode hidden">
             <button id="normal" class="fa-solid fa-keyboard"></button>
-            <button id="daily"><img src="/daily.svg" alt=""></button>
-            <button id="weekly"><img src="/weekly.svg" alt=""></button>
+            <button id="daily"><img src="/main/daily.svg" alt=""></button>
+            <button id="weekly"><img src="/main/weekly.svg" alt=""></button>
           </div>
         </a>
       </div>
@@ -49,7 +54,7 @@
             <i class="fa-solid fa-circle-user"></i>
             <p>Capeta_2</p>
             <i class="fa-solid fa-chevron-down"></i>
-            <a class="leaderboard-btn fa-solid fa-ranking-star" href="/leaderboard/leaderboard.html">
+            <a class="leaderboard-btn fa-solid fa-ranking-star" href="/main/leaderboard/leaderboard.html">
             </a>
             
           </button>
@@ -107,7 +112,22 @@
               <p>Press tab + enter to restart</p>
             </div>
       </div>
-      <div class="transition transition-3 is-active"><img src="/blob-haikei 1.svg"></div>
+      <div class="transition transition-3 is-active">  <svg
+        class="blobe"
+        viewBox="0 0 3152 2758"
+        fill="none"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2961.31 807.973C2046.31 -74.0269 1945.81 -7.52713 1438.31 8.97287C930.814 25.4729 300.815 413.973 245.371 492.04C121.302 635.481 0.815874 873.5 0.81543 1142.97V2756.97H3151.1V1142.97C3137.85 1033.58 3078.98 921.399 2961.31 807.973Z"
+          fill="#FF6C00"
+        />
+        <path
+          d="M224.313 499.973L245.371 492.04M245.371 492.04C300.815 413.973 930.814 25.4729 1438.31 8.97287C1945.81 -7.52713 2046.31 -74.0269 2961.31 807.973C3078.98 921.399 3137.85 1033.58 3151.1 1142.97V2756.97H0.81543V1142.97C0.815874 873.5 121.302 635.481 245.371 492.04Z"
+          stroke="black"
+        />
+      </svg></div>
       <div class="page">
       <!-- <div id="blob-container" tabindex="-1">
         <section class="blob" >
@@ -155,6 +175,23 @@
           ></a>
         </span>
       </button>
+    </div>
+    <div class="colors">
+      <p>Background</p>
+      <input class="background" data-coloris />
+      <p>Primary color</p>
+      <input class="primary" data-coloris />
+      <p>Secondary color</p>
+      <input class="secondary" data-coloris />
+      <p>Tertiary color</p>
+      <input class="tertiary" data-coloris />
+      <p>Text Primary</p>
+      <input class="text-primary" data-coloris />
+      <p>Text Secondary</p>
+      <input class="text-secondary" data-coloris />
+      <p>Main text</p>
+      <input class="main-text" data-coloris />
+
     </div>
     </main>
     <script src="script.js"></script>

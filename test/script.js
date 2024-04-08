@@ -125,15 +125,121 @@
 //     console.log(words);
 //   });
 ///////////////////
-const teste = function () {
-  let numeroteste = 5 * 5;
-  console.log(numeroteste);
-  return numeroteste;
-};
-const pontos = teste();
-const link = encodeURI(window.location.href);
-const msg = encodeURIComponent(`Hey i made ${pontos} points on eggtype`);
-const title = encodeURIComponent("jaja");
+// const teste = function () {
+//   let numeroteste = 5 * 5;
+//   console.log(numeroteste);
+//   return numeroteste;
+// };
+// const pontos = teste();
+// const link = encodeURI(window.location.href);
+// const msg = encodeURIComponent(`Hey i made ${pontos} points on eggtype`);
+// const title = encodeURIComponent("jaja");
 
-const twitter = document.querySelector(".twitter");
-twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=javascript,programming`;
+// const twitter = document.querySelector(".twitter");
+// twitter.href = `http://twitter.com/share?&url=${link}&text=${msg}&hashtags=javascript,programming`;
+/////////////////
+
+Coloris({
+  swatches: [
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+    "#444",
+  ],
+});
+
+Coloris({
+  onChange: (color) => undefined,
+});
+
+Coloris({
+  // parent container
+  parent: null,
+  // The bound input fields are wrapped in a div that adds a thumbnail showing the current color
+  // and a button to open the color picker (for accessibility only).
+  wrap: true,
+  // enable format toggle button
+  formatToggle: true,
+  // Margin in px
+  margin: 2,
+  // Show only the color swatches in the picker dialog
+  swatchesOnly: false,
+  // disable alpha
+  alpha: true,
+  // not focus the color value input
+  focusInput: true,
+  // select the color value input when the picker opens
+  selectInput: false,
+  // auto close
+  autoClose: false,
+  // set to true to use the color picker as an inline widget
+  inline: false,
+  // default colorin inline mode
+  defaultColor: "#000000",
+  // config the clear button
+  clearButton: {
+    show: false,
+    label: "Clear",
+  },
+  // close button
+  closeButton: false,
+  closeLabel: "Close",
+  // a11y
+  a11y: {
+    open: "Open color picker",
+    close: "Close color picker",
+    clear: "Clear the selected color",
+    marker: "Saturation: {s}. Brightness: {v}.",
+    hueSlider: "Hue slider",
+    alphaSlider: "Opacity slider",
+    input: "Color value field",
+    format: "Color format",
+    swatch: "Color swatch",
+    instruction:
+      "Saturation and brightness selector. Use up, down, left and right arrow keys to select.",
+  },
+});
+
+// document.addEventListener("coloris:pick", (event) => {
+//   console.log("New color", event.detail.color);
+//   document.body.style.backgroundColor = event.detail.color;
+// });
+
+const root = document.querySelector(":root");
+const primaryInput = document.querySelector(".primary[data-coloris]");
+const secondaryInput = document.querySelector(".secondary[data-coloris]");
+const tertiaryInput = document.querySelector(".tertiary[data-coloris]");
+const backgroundInput = document.querySelector(".background[data-coloris]");
+
+// Adiciona um ouvinte de eventos para mudança em cada input de cor
+primaryInput.addEventListener("change", function (event) {
+  if (event.target === primaryInput) {
+    root.style.setProperty("--primaryColor", primaryInput.value);
+  }
+});
+
+secondaryInput.addEventListener("change", function (event) {
+  if (event.target === secondaryInput) {
+    root.style.setProperty("--secondaryColor", secondaryInput.value);
+  }
+});
+
+tertiaryInput.addEventListener("change", function (event) {
+  if (event.target === tertiaryInput) {
+    root.style.setProperty("--tertiaryColor", tertiaryInput.value);
+  }
+});
+
+backgroundInput.addEventListener("change", function (event) {
+  if (event.target === backgroundInput) {
+    root.style.setProperty("--bgcolor", backgroundInput.value);
+  }
+});

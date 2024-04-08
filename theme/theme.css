@@ -1,0 +1,138 @@
+:root {
+  --bgcolor: rgb(42, 42, 42);
+  --hover: #606060;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: rgb(255, 115, 0);
+  --secondaryColor: rgb(0, 255, 136);
+  --tertiaryColor: rgb(182, 182, 182);
+  --menuBackground: #202020;
+  --menuBtns: #2a2a2a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bgcolor);
+}
+
+.theme-container {
+  text-align: center;
+  width: 800px;
+  height: 500px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--menuBackground);
+  border-radius: 37px;
+}
+
+.preview {
+  background-color: var(--bgcolor);
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 10%;
+  top: 10%;
+  border-radius: 37px;
+}
+
+.mini-logo {
+  color: var(--textPrimary);
+  font-size: 2rem;
+}
+
+.mini-text-container {
+  top: 25%;
+  position: relative;
+  width: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  /* border: red solid 1px; */
+}
+
+.mini-text1 {
+  color: var(--textPrimary);
+  font-size: 2rem;
+}
+.mini-text2 {
+  color: var(--textSecondary);
+  font-size: 2rem;
+}
+
+.mini-items {
+  font-size: 3rem;
+  color: var(--textSecondary);
+  position: absolute;
+}
+
+.mini-time {
+  top: -50%;
+  left: 10%;
+}
+
+.mini-restart {
+  left: 50%;
+  top: 50%;
+}
+
+.mini-blob-container {
+  width: 70%;
+  left: 120px;
+  position: relative;
+  bottom: -356px;
+}
+
+.mini-blob {
+  height: 300px;
+  width: 100%;
+}
+
+.mini-menu {
+  background-color: var(--menuBackground);
+  right: 5%;
+  position: absolute;
+  width: 70px;
+  top: 10%;
+  border-radius: 0px 0px 5px 5px;
+  color: var(--textPrimary);
+  padding-bottom: 8px;
+}
+
+.mini-username-container {
+  background-color: var(--primaryColor);
+  right: 5%;
+  position: absolute;
+  width: 70px;
+  top: 5.5%;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.mini-username {
+  color: var(--textPrimary);
+}
+
+.mini-user-pfp {
+  font-size: 3rem;
+  top: -30px;
+  left: 30px;
+  position: absolute;
+}
+.mini-menu-btns {
+  width: 80%;
+  margin: auto;
+  background-color: var(--menuBtns);
+  margin-top: 5px;
+  border-radius: 5px;
+  justify-content: center;
+  color: var(--menuBackground);
+}
+.mini-menu-btns:first-child {
+  margin-top: 25px;
+  background-color: var(--hover);
+}

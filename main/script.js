@@ -543,3 +543,55 @@ window.onload = () => {
 ///////
 // separar
 //////
+const root = document.querySelector(":root");
+const backgroundInput = document.querySelector(".background[data-coloris]");
+const primaryInput = document.querySelector(".primary[data-coloris]");
+const secondaryInput = document.querySelector(".secondary[data-coloris]");
+const tertiaryInput = document.querySelector(".tertiary[data-coloris]");
+const textPrimaryInput = document.querySelector(".text-primary[data-coloris]");
+const textSecondaryInput = document.querySelector(
+  ".text-secondary[data-coloris]"
+);
+const mainTextInput = document.querySelector(".main-text[data-coloris]");
+
+backgroundInput.addEventListener("change", function (event) {
+  if (event.target === backgroundInput) {
+    root.style.setProperty("--bgcolor", backgroundInput.value);
+  }
+});
+
+primaryInput.addEventListener("change", function (event) {
+  if (event.target === primaryInput) {
+    root.style.setProperty("--primaryColor", primaryInput.value);
+  }
+});
+
+secondaryInput.addEventListener("change", function (event) {
+  if (event.target === secondaryInput) {
+    root.style.setProperty("--secondaryColor", secondaryInput.value);
+  }
+});
+
+tertiaryInput.addEventListener("change", function (event) {
+  if (event.target === tertiaryInput) {
+    root.style.setProperty("--tertiaryColor", tertiaryInput.value);
+  }
+});
+
+textPrimaryInput.addEventListener("change", function (event) {
+  if (event.target === textPrimaryInput) {
+    root.style.setProperty("--textPrimary", textPrimaryInput.value);
+  }
+});
+
+textSecondaryInput.addEventListener("change", function (event) {
+  if (event.target === textSecondaryInput) {
+    root.style.setProperty("--textSecondary", textSecondaryInput.value);
+  }
+});
+
+mainTextInput.addEventListener("change", function (event) {
+  if (event.target === mainTextInput) {
+    root.style.setProperty("--mainText", mainTextInput.value);
+  }
+});
