@@ -27,9 +27,10 @@ body {
 
 .theme-container {
   text-align: center;
-  width: 90%; /* Ajustado para ocupar 90% da largura da tela */
-  max-width: 800px; /* Limitar a largura máxima para 800px */
-  padding: 20px; /* Adicionar espaço interno */
+  width: 50vw;
+  height: 60vh;
+  max-width: 800px;
+  padding: 20px;
   background-color: var(--menuBackground);
   border-radius: 37px;
   min-height: 193px;
@@ -41,31 +42,96 @@ body {
   border-radius: 37px;
   height: 55%;
   position: relative;
+  height: 90%;
 }
 
 .mini-logo {
   color: var(--textPrimary);
-  font-size: 2rem;
+  font-size: 55px;
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .mini-text-container {
-  margin-top: 20px;
   position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%);
 }
 
 .mini-text1 {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: var(--textPrimary);
 }
 .mini-text2 {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: var(--textSecondary);
 }
 
 .mini-items {
-  font-size: 2rem;
   color: var(--textSecondary);
+}
+
+.mini-time {
+  position: absolute;
+  font-size: 4rem;
+  top: -40%;
+  left: 35%;
+}
+
+.mini-restart {
+  position: absolute;
+  font-size: 4rem;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.mini-username {
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  background-color: var(--primaryColor);
+  color: var(--textPrimary);
+  font-size: 1.5rem;
+  padding: 0px 4% 0px 4%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.mini-btns {
+  background-color: var(--menuBackground);
+  position: absolute;
+  color: var(--textPrimary);
+  font-size: 1.5rem;
+  top: 12%;
+  right: 10%;
+  padding: 0px 1% 0px 1%;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.mini-menu-btns {
+  background-color: var(--menuBtns);
+  margin-top: 20%;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  border-radius: 15px;
+}
+
+.mini-menu-btns:last-child {
+  background-color: var(--hover);
+  margin-bottom: 15px;
+}
+
+.mini-blob {
+  position: absolute;
+  bottom: -55%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 80%;
 }
 
 /* Media query para telas menores que 600px (celulares em modo retrato) */
@@ -73,185 +139,191 @@ body {
 @media screen and (max-width: 768px) {
 }
 
+@media screen and (max-width: 1200px) {
+  /* Estilos para telas menores que 1200px (desktops maiores e laptops) */
+  .theme-container {
+    height: 60vh;
+    max-height: 60vh;
+  }
+
+  .mini-logo {
+    font-size: 40px;
+  }
+
+  .mini-text-container {
+    top: 30%;
+  }
+
+  .mini-text1 {
+    font-size: 3rem;
+  }
+  .mini-text2 {
+    font-size: 3rem;
+  }
+
+  .mini-time {
+    font-size: 4rem;
+    top: -40%;
+    left: 28%;
+  }
+
+  .mini-restart {
+    font-size: 4rem;
+  }
+
+  .mini-username {
+    font-size: 1.5rem;
+    padding: 0px 4% 0px 4%;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .mini-btns {
+    font-size: 1.5rem;
+    top: 12%;
+    right: 10%;
+    padding: 0px 1% 0px 1%;
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  .mini-menu-btns {
+    margin-top: 20%;
+    border-radius: 15px;
+  }
+
+  .mini-menu-btns:last-child {
+    margin-bottom: 15px;
+  }
+
+  .mini-blob {
+    bottom: -62%;
+    height: 90%;
+  }
+}
+
 @media screen and (max-width: 992px) {
   /* Estilos para telas menores que 992px (tablets em modo paisagem e desktops menores) */
   .theme-container {
     height: 40vh;
     border-radius: 25px;
+    max-width: 600px;
   }
 
   .preview {
-    height: 90%;
     border-radius: 25px;
   }
 
   .mini-logo {
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 30px;
   }
 
   .mini-text-container {
-    width: 100%;
-    left: 50%;
     top: 30%;
-    transform: translateX(-50%);
   }
 
   .mini-text1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .mini-text2 {
-    font-size: 1.5rem;
-    color: var(--textSecondary);
+    font-size: 2rem;
   }
   .mini-time {
-    position: absolute;
     font-size: 2rem;
-    top: -30%;
-    left: 40%;
+    top: -40%;
+    left: 30%;
   }
   .mini-restart {
-    position: absolute;
     font-size: 2rem;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
   }
   .mini-username {
-    position: absolute;
-    right: 10%;
-    top: 5%;
-    background-color: var(--primaryColor);
+    font-size: 1rem;
     padding: 0px 4% 0px 4%;
     border-radius: 10px 10px 0px 0px;
-    color: var(--textPrimary);
   }
   .mini-btns {
-    background-color: var(--menuBackground);
-    position: absolute;
-    top: 11%;
+    top: 12%;
     right: 10%;
-    padding: 0px 1% 0px 1%;
-    color: var(--textPrimary);
     border-radius: 0px 0px 10px 10px;
+    font-size: 1rem;
   }
   .mini-menu-btns {
-    background-color: var(--menuBtns);
     margin-top: 20%;
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
+    border-radius: 15px;
   }
   .mini-menu-btns:last-child {
-    background-color: var(--hover);
     margin-bottom: 5px;
   }
 
   .mini-blob {
-    position: absolute;
     bottom: -48%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
     height: 70%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .theme-container {
-    width: 60%;
-    height: 20vh;
-    border-radius: 20px;
-    max-height: 238px;
+    width: 70vw;
+    height: 60vh;
+    border-radius: 10%;
+    /* max-height: 238px; */
   }
   .preview {
-    height: 90%;
-    border-radius: 20px;
+    border-radius: 10%;
     min-height: 138px;
-    max-height: 181px;
   }
 
   .mini-logo {
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
+    font-size: 40px;
   }
 
   .mini-text-container {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 40%;
   }
 
-  .mini-text1 {
-    font-size: 1.2rem;
-  }
+  .mini-text1,
   .mini-text2 {
-    font-size: 1.2rem;
-  }
-
-  .mini-items {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-size: 2.5rem;
   }
 
   .mini-time {
-    position: absolute;
-    font-size: 2rem;
-    top: -50%;
-    left: 32%;
+    font-size: 7rem;
+    top: -100%;
+    left: 12%;
   }
 
   .mini-restart {
-    position: absolute;
-    font-size: 2rem;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
+    font-size: 7rem;
+    top: 15%;
   }
 
   .mini-username {
-    position: absolute;
-    right: 10%;
-    top: 5%;
-    background-color: var(--primaryColor);
-    padding: 0px 3px 0px 3px;
-    border-radius: 5px 5px 0px 0px;
-    color: var(--textPrimary);
+    font-size: 2.5rem;
+    padding: 0px 4% 0px 4%;
+    border-radius: 20% 20% 0px 0px;
   }
 
   .mini-btns {
-    background-color: var(--menuBackground);
-    position: absolute;
-    top: 19%;
+    top: 15%;
     right: 10%;
-    padding: 0px 3px 0px 3px;
-    color: var(--textPrimary);
-    border-radius: 0px 0px 5px 5px;
+    padding: 0px 4% 0px 4%;
+    border-radius: 0px 0px 20% 20%;
   }
 
   .mini-menu-btns {
-    background-color: var(--menuBtns);
     margin-top: 10%;
+    font-size: 2.5rem;
     padding-left: 0.2vw;
     padding-right: 0.2vw;
+    border-radius: 5px;
   }
 
   .mini-menu-btns:last-child {
-    background-color: var(--hover);
     margin-bottom: 5px;
   }
 
   .mini-blob {
-    position: absolute;
     bottom: -41%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
     height: 60%;
+    width: 90%;
   }
-}
-
-@media screen and (max-width: 1200px) {
-  /* Estilos para telas menores que 1200px (desktops maiores e laptops) */
 }
