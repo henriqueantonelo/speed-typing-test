@@ -21,11 +21,16 @@
       rel="stylesheet"
       href="/colorPicker/Coloris-0.23.0/dist/coloris.min.css"
     />
-    <link rel="stylesheet" href="theme-test.css" />
     <script src="/colorPicker/Coloris-0.23.0/dist/coloris.min.js"></script>
+    <link rel="stylesheet" href="theme-test.css" />
   </head>
   <body>
+    <div class="big-logo">...</div>
     <div class="theme-container">
+      <button class="use-theme-btn">
+        <i class="fa-solid fa-hand-pointer"></i>
+        <p>Use theme</p>
+      </button>
       <div class="preview">
         <div class="mini-logo">...</div>
         <div class="mini-text-container">
@@ -60,5 +65,74 @@
         </div>
       </div>
     </div>
+    <div class="theme-selector-container">
+      <div class="themes-btns">
+        <input
+          class="color-btn bg-color"
+          type="text"
+          value="Background"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn main-text"
+          type="text"
+          value="Main Text"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn main-secondary"
+          type="text"
+          value="Main Secondary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn primary"
+          type="text"
+          value="Primary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn text-primary"
+          type="text"
+          value="Text Primary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn text-secondary"
+          type="text"
+          value="Text Secondary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn hover"
+          type="text"
+          value="Hover"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn menu-background"
+          type="text"
+          value="Menu Background"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn menu-buttons"
+          type="text"
+          value="Menu Buttons"
+          readonly
+          data-coloris
+        />
+      </div>
+    </div>
+    <div class="color-picker"></div>
   </body>
+  <script src="theme-test.js"></script>
 </html>

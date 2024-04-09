@@ -194,7 +194,6 @@
   margin: 0 4px 6px 4px;
   padding: 0;
   border: 0;
-  /* border-radius: 30%; */
   color: inherit;
   text-indent: -1000px;
   white-space: nowrap;
@@ -297,11 +296,11 @@ input.clr-color:focus {
 .clr-marker {
   box-sizing: border-box;
 }
-.clr-field {
+/* .clr-field {
   display: inline-block;
   position: relative;
   color: transparent;
-}
+} */
 .clr-field input {
   margin: 0;
   direction: ltr;
