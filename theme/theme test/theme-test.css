@@ -8,6 +8,23 @@
   --bgcolor: rgb(42, 42, 42);
   --menuBackground: #202020;
   --menuBtns: #2a2a2a;
+  /* //////////// */
+  --preview-mainSecondary: rgb(104, 104, 104);
+  --preview-mainText: rgb(255, 255, 255);
+  --preview-primaryColor: rgb(255, 115, 0);
+  --preview-textSecondary: #ffffff;
+  --preview-textPrimary: #fff;
+  --preview-hover: #606060;
+  --preview-bgcolor: rgb(42, 42, 42);
+  --preview-menuBackground: #202020;
+  --preview-menuBtns: #2a2a2a;
+  /* //////////// */
+  --fixed-primaryColor: rgb(255, 115, 0);
+  --fixed-textPrimary: #fff;
+  --fixed-menuBackground: #202020;
+  --fixed-menuBtns: #2a2a2a;
+  --fixed-scrollbar-body: #2a2a2a;
+  --fixed-scrollbar-thumb: rgb(255, 115, 0);
 }
 
 * {
@@ -31,13 +48,13 @@ body {
   height: 60vh;
   /* max-width: 800px; */
   padding: 20px;
-  background-color: var(--menuBackground);
+  background-color: var(--fixed-menuBackground);
   border-radius: 37px;
   min-height: 193px;
 }
 
 .preview {
-  background-color: var(--bgcolor);
+  background-color: var(--preview-bgcolor);
   padding: 20px;
   border-radius: 37px;
   height: 55%;
@@ -46,7 +63,7 @@ body {
 }
 
 .mini-logo {
-  color: var(--textPrimary);
+  color: var(--preview-textPrimary);
   font-size: 55px;
   position: absolute;
   top: 0;
@@ -64,15 +81,15 @@ body {
 
 .mini-text1 {
   font-size: 3rem;
-  color: var(--mainText);
+  color: var(--preview-mainText);
 }
 .mini-text2 {
   font-size: 3rem;
-  color: var(--mainSecondary);
+  color: var(--preview-mainSecondary);
 }
 
 .mini-items {
-  color: var(--textSecondary);
+  color: var(--preview-textSecondary);
 }
 
 .mini-time {
@@ -94,17 +111,17 @@ body {
   position: absolute;
   right: 10%;
   top: 5%;
-  background-color: var(--primaryColor);
-  color: var(--textPrimary);
+  background-color: var(--preview-primaryColor);
+  color: var(--preview-textPrimary);
   font-size: 1.5rem;
   padding: 0px 4% 0px 4%;
   border-radius: 10px 10px 0px 0px;
 }
 
 .mini-btns {
-  background-color: var(--menuBackground);
+  background-color: var(--preview-menuBackground);
   position: absolute;
-  color: var(--textPrimary);
+  color: var(--preview-textPrimary);
   font-size: 1.5rem;
   top: 12%;
   right: 10%;
@@ -113,7 +130,7 @@ body {
 }
 
 .mini-menu-btns {
-  background-color: var(--menuBtns);
+  background-color: var(--preview-menuBtns);
   margin-top: 20%;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
@@ -121,7 +138,7 @@ body {
 }
 
 .mini-menu-btns:last-child {
-  background-color: var(--hover);
+  background-color: var(--preview-hover);
   margin-bottom: 15px;
 }
 
@@ -132,7 +149,7 @@ body {
   transform: translateX(-50%);
   width: 80%;
   height: 80%;
-  fill: var(--primaryColor);
+  fill: var(--preview-primaryColor);
 }
 
 /* Media query para telas menores que 600px (celulares em modo retrato) */
@@ -342,8 +359,8 @@ body {
   }
 
   .use-theme-btn {
-    background-color: var(--primaryColor);
-    color: var(--textPrimary);
+    background-color: var(--fixed-primaryColor);
+    color: var(--fixed-textPrimary);
     width: 70%;
     left: 50%;
     transform: translate(-50%);
@@ -357,6 +374,7 @@ body {
     border-radius: 20px;
     cursor: pointer;
     border: none;
+    z-index: 10;
   }
 
   .use-theme-btn i {
@@ -378,7 +396,7 @@ body {
   }
 
   .theme-selector-container {
-    background-color: var(--menuBackground);
+    background-color: var(--fixed-menuBackground);
     width: 90%;
     height: 23vh;
     bottom: 5%;
@@ -395,6 +413,7 @@ body {
     height: 100%;
     width: 50%;
     overflow: scroll;
+    scrollbar-color: var(--fixed-scrollbar-thumb) var(--fixed-scrollbar-body);
   }
 
   .color-btn {
@@ -403,47 +422,47 @@ body {
     border-radius: 30px;
     font-weight: bold;
     padding: 0 10px;
-    background-color: var(--menuBtns);
-    color: var(--textPrimary);
+    background-color: var(--fixed-menuBtns);
+    color: var(--fixed-textPrimary);
     cursor: pointer;
     outline: none;
     text-align: center;
   }
 
   .bg-color {
-    border: 2px solid var(--bgcolor);
+    border: 2px solid var(--preview-bgcolor);
   }
 
   .main-text {
-    border: 2px solid var(--mainText);
+    border: 2px solid var(--preview-mainText);
   }
 
   .main-secondary {
-    border: 2px solid var(--MainSecondary);
+    border: 2px solid var(--preview-mainSecondary);
   }
 
   .primary {
-    border: 2px solid var(--primaryColor);
+    border: 2px solid var(--preview-primaryColor);
   }
 
   .text-primary {
-    border: 2px solid var(--textPrimary);
+    border: 2px solid var(--preview-textPrimary);
   }
 
   .text-secondary {
-    border: 2px solid var(--textSecondary);
+    border: 2px solid var(--preview-textSecondary);
   }
 
   .hover {
-    border: 2px solid var(--hover);
+    border: 2px solid var(--preview-hover);
   }
 
   .menu-background {
-    border: 2px solid var(--menuBackground);
+    border: 2px solid var(--preview-menuBackground);
   }
 
   .menu-buttons {
-    border: 2px solid var(--menuBtns);
+    border: 2px solid var(--preview-menuBtns);
   }
 }
 
