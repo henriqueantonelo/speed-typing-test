@@ -472,3 +472,23 @@ body {
   margin-bottom: 10px;
   width: 100px;
 }
+
+/* .color-picker {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  overflow: scroll;
+  background-color: rgb(68, 68, 68);
+}
+
+.clr-picker {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  height: 23vh;
+  width: 45%;
+  border-radius: 0;
+  margin-left: 178px;
+} */

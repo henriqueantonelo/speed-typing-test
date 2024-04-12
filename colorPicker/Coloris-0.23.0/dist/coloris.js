@@ -768,6 +768,7 @@
       format = currentFormat;
     }
 
+    //////aqui muda o input lembrar
     switch (format) {
       case "hex":
         colorValue.value = hex;
