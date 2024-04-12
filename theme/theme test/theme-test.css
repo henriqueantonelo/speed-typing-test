@@ -1,11 +1,11 @@
 :root {
-  --mainSecondary: rgb(104, 104, 104);
-  --mainText: rgb(255, 255, 255);
-  --primaryColor: rgb(255, 115, 0);
-  --textSecondary: #ffffff;
-  --textPrimary: #fff;
-  --hover: #606060;
   --bgcolor: rgb(42, 42, 42);
+  --mainText: rgb(255, 255, 255);
+  --mainSecondary: rgb(104, 104, 104);
+  --primaryColor: rgb(255, 115, 0);
+  --textPrimary: #fff;
+  --textSecondary: #ffffff;
+  --hover: #606060;
   --menuBackground: #202020;
   --menuBtns: #2a2a2a;
   /* //////////// */
@@ -492,3 +492,14 @@ body {
   border-radius: 0;
   margin-left: 178px;
 } */
+
+/* ;;;;;;;;; */
+.reset {
+  position: absolute;
+  padding-top: 14px;
+  border-top: 1px solid var(--hover);
+}
+
+#last-btn {
+  margin-bottom: 14px;
+}

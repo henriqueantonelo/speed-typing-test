@@ -17,7 +17,14 @@ const menuButtonsInput = document.querySelector(".menu-buttons[data-coloris]");
 
 const colors = {
   bgcolor: ["Background"],
-  textcolor: [],
+  mainText: [],
+  mainSecondary: [],
+  primaryColor: [],
+  textPrimary: [],
+  textSecondary: [],
+  hover: [],
+  menuBackground: [],
+  menuBtns: [],
 };
 
 // const teste = document.querySelector(".clr-picker");
@@ -26,19 +33,11 @@ bgColorInput.addEventListener("change", function (event) {
   if (event.target === bgColorInput) {
     root.style.setProperty("--preview-bgcolor", bgColorInput.value);
     colors.bgcolor.push(bgColorInput.value);
-
     colors.bgcolor.splice(0, colors.bgcolor.length - 1);
-    console.log(colors.bgcolor);
-    // console.log(ultimonumero);
   }
   if (bgColorInput.value !== "Background") {
     bgColorInput.value = "Background";
   }
-  // if (clrPicker.classList.contains(".clr-open")) {
-  //   console.log("hahaha");
-  // } else {
-  //   console.log("nnnnnnaooooo");
-  // }
 });
 
 bgColorInput.addEventListener("click", function () {
@@ -48,6 +47,8 @@ bgColorInput.addEventListener("click", function () {
 mainTextInput.addEventListener("change", function (event) {
   if (event.target === mainTextInput) {
     root.style.setProperty("--preview-mainText", mainTextInput.value);
+    colors.mainText.push(mainTextInput.value);
+    colors.mainText.splice(0, colors.mainText.length - 1);
   }
   if (mainTextInput.value !== "Main Text") {
     mainTextInput.value = "Main Text";
@@ -57,6 +58,8 @@ mainTextInput.addEventListener("change", function (event) {
 mainSecondaryInput.addEventListener("change", function (event) {
   if (event.target === mainSecondaryInput) {
     root.style.setProperty("--preview-mainSecondary", mainSecondaryInput.value);
+    colors.mainSecondary.push(mainSecondaryInput.value);
+    colors.mainSecondary.splice(0, colors.mainSecondary.length - 1);
   }
   if (mainSecondaryInput.value !== "Main Secondary") {
     mainSecondaryInput.value = "Main Secondary";
@@ -66,6 +69,8 @@ mainSecondaryInput.addEventListener("change", function (event) {
 primaryInput.addEventListener("change", function (event) {
   if (event.target === primaryInput) {
     root.style.setProperty("--preview-primaryColor", primaryInput.value);
+    colors.primaryColor.push(primaryInput.value);
+    colors.primaryColor.splice(0, colors.primaryColor.length - 1);
   }
   if (primaryInput.value !== "Primary") {
     primaryInput.value = "Primary";
@@ -75,6 +80,8 @@ primaryInput.addEventListener("change", function (event) {
 textPrimaryInput.addEventListener("change", function (event) {
   if (event.target === textPrimaryInput) {
     root.style.setProperty("--preview-textPrimary", textPrimaryInput.value);
+    colors.textPrimary.push(textPrimaryInput.value);
+    colors.textPrimary.splice(0, colors.textPrimary.length - 1);
   }
   if (textPrimaryInput.value !== "Text Primary") {
     textPrimaryInput.value = "Text Primary";
@@ -84,6 +91,8 @@ textPrimaryInput.addEventListener("change", function (event) {
 textSecondaryInput.addEventListener("change", function (event) {
   if (event.target === textSecondaryInput) {
     root.style.setProperty("--preview-textSecondary", textSecondaryInput.value);
+    colors.textSecondary.push(textSecondaryInput.value);
+    colors.textSecondary.splice(0, colors.textSecondary.length - 1);
   }
   if (textSecondaryInput.value !== "Text Secondary") {
     textSecondaryInput.value = "Text Secondary";
@@ -93,6 +102,8 @@ textSecondaryInput.addEventListener("change", function (event) {
 hoverInput.addEventListener("change", function (event) {
   if (event.target === hoverInput) {
     root.style.setProperty("--preview-hover", hoverInput.value);
+    colors.hover.push(hoverInput.value);
+    colors.hover.splice(0, colors.hover.length - 1);
   }
   if (hoverInput.value !== "Hover") {
     hoverInput.value = "Hover";
@@ -105,6 +116,8 @@ menuBackgroundInput.addEventListener("change", function (event) {
       "--preview-menuBackground",
       menuBackgroundInput.value
     );
+    colors.menuBackground.push(menuBackgroundInput.value);
+    colors.menuBackground.splice(0, colors.menuBackground.length - 1);
   }
   if (menuBackgroundInput.value !== "Menu Background") {
     menuBackgroundInput.value = "Menu Background";
@@ -114,6 +127,8 @@ menuBackgroundInput.addEventListener("change", function (event) {
 menuButtonsInput.addEventListener("change", function (event) {
   if (event.target === menuButtonsInput) {
     root.style.setProperty("--preview-menuBtns", menuButtonsInput.value);
+    colors.menuBtns.push(menuButtonsInput.value);
+    colors.menuBtns.splice(0, colors.menuBtns.length - 1);
   }
   if (menuButtonsInput.value !== "Menu Buttons") {
     menuButtonsInput.value = "Menu Buttons";
@@ -122,34 +137,13 @@ menuButtonsInput.addEventListener("change", function (event) {
 
 const useTheme = document.querySelector(".use-theme-btn");
 useTheme.addEventListener("click", function () {
-  root.style.setProperty("--bgcolor", bgColorInput.value);
-  root.style.setProperty("--mainText", mainTextInput.value);
-  root.style.setProperty("--mainSecondary", mainSecondaryInput.value);
-  root.style.setProperty("--primaryColor", primaryInput.value);
-  root.style.setProperty("--textPrimary", textPrimaryInput.value);
-  root.style.setProperty("--textSecondary", textSecondaryInput.value);
-  root.style.setProperty("--hover", hoverInput.value);
-  root.style.setProperty("--menuBackground", menuBackgroundInput.value);
-  root.style.setProperty("--menuBtns", menuButtonsInput.value);
+  root.style.setProperty("--bgcolor", colors.bgcolor);
+  root.style.setProperty("--mainText", colors.mainText);
+  root.style.setProperty("--mainSecondary", colors.mainSecondary);
+  root.style.setProperty("--primaryColor", colors.primaryColor);
+  root.style.setProperty("--textPrimary", colors.textPrimary);
+  root.style.setProperty("--textSecondary", colors.textSecondary);
+  root.style.setProperty("--hover", colors.hover);
+  root.style.setProperty("--menuBackground", colors.menuBackground);
+  root.style.setProperty("--menuBtns", colors.menuBtns);
 });
-
-const inputMap = {
-  bgColorInput: { name: "Background", property: "--preview-bgcolor" },
-  mainTextInput: { name: "Main Text", property: "--preview-mainText" },
-  mainSecondaryInput: {
-    name: "Main Secondary",
-    property: "--preview-mainSecondary",
-  },
-  primaryInput: { name: "Primary", property: "--preview-primaryColor" },
-  textPrimaryInput: { name: "Text Primary", property: "--preview-textPrimary" },
-  textSecondaryInput: {
-    name: "Text Secondary",
-    property: "--preview-textSecondary",
-  },
-  hoverInput: { name: "Hover", property: "--preview-hover" },
-  menuBackgroundInput: {
-    name: "Menu Background",
-    property: "--preview-menuBackground",
-  },
-  menuButtonsInput: { name: "Menu Buttons", property: "--preview-menuBtns" },
-};
