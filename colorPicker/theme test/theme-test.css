@@ -498,8 +498,14 @@ body {
   position: absolute;
   padding-top: 14px;
   border-top: 1px solid var(--hover);
+  padding-bottom: 14px;
 }
 
 #last-btn {
   margin-bottom: 14px;
+}
+
+.reset-theme-btn {
+  border: none;
+  cursor: pointer;
 }
