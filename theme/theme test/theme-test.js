@@ -14,6 +14,7 @@ const menuBackgroundInput = document.querySelector(
   ".menu-background[data-coloris]"
 );
 const menuButtonsInput = document.querySelector(".menu-buttons[data-coloris]");
+const resetThemeInput = document.querySelector(".reset-theme-btn");
 
 const colors = {
   bgcolor: ["Background"],
@@ -132,6 +133,14 @@ menuButtonsInput.addEventListener("change", function (event) {
   }
   if (menuButtonsInput.value !== "Menu Buttons") {
     menuButtonsInput.value = "Menu Buttons";
+  }
+});
+
+resetThemeInput.addEventListener("click", function () {
+  document.body.classList.toggle("main-theme");
+  resetThemeInput.value = "Back to custom";
+  if ((resetThemeInput.value = "Back to custom")) {
+    console.log("change back to default value");
   }
 });
 
