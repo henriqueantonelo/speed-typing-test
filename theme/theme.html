@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme</title>
     <link
       rel="stylesheet"
@@ -12,7 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,29 +21,99 @@
       rel="stylesheet"
       href="/colorPicker/Coloris-0.23.0/dist/coloris.min.css"
     />
-    <script src="/colorPicker/Coloris-0.23.0/dist/coloris.min.js"></script>
+    <script src="/colorPicker/Coloris-0.23.0/dist/coloris.js"></script>
+    <script src="/reusable/user/user.js"></script>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="/reusable/user/user.css" />
+    <link rel="stylesheet" href="/reusable/logo/logo.css" />
+    <!-- <script src="/reusable/logo/logo.js"></script> -->
   </head>
   <body>
+    <nav class="navbar z-index" tabindex="-1">
+      <!-- //// -->
+      <!-- <div id="wrapper">
+        <a href="#" class="dots-Btn" tabindex="-1">
+          <div class="dots-container">
+            <div class="dot" id="dot-2"></div>
+            <div class="dot" id="dot-3"></div>
+            <div class="dot" id="dot-1"></div>
+            <i class="dot fa-solid fa-stopwatch" id="dot-4"></i>
+            <i class="dot fa-solid fa-earth-americas" id="dot-5"></i>
+            <i class="dot fa-solid fa-gamepad" id="dot-6"></i>
+          </div>
+          <span></span>
+          <div class="times hidden">
+            <button id="fifteen" value="15">15</button>
+            <button id="thirty" value="30">30</button>
+            <button id="sixty" value="60">60</button>
+          </div>
+          <div class="language hidden">
+            <button id="ptbr">PtBr</button>
+            <button id="eng">Eng</button>
+            <button id="soon">Soon</button>
+          </div>
+          <div class="gamemode hidden">
+            <button id="normal" class="fa-solid fa-keyboard"></button>
+            <button id="daily"><img src="/main/daily.svg" alt="" /></button>
+            <button id="weekly"><img src="/main/weekly.svg" alt="" /></button>
+          </div>
+        </a>
+      </div> -->
+      <!-- //// -->
+      <div class="user-container-wrapper">
+        <div class="user-container">
+          <button class="dropbtn">
+            <i class="fa-solid fa-circle-user"></i>
+            <p>Capeta_2</p>
+            <i class="fa-solid fa-chevron-down"></i>
+            <a
+              class="leaderboard-btn fa-solid fa-ranking-star"
+              href="/main/leaderboard/leaderboard.html"
+            >
+            </a>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">
+              <i class="fa-solid fa-user-pen"></i>
+            </a>
+            <p class="user-name">Capeta_2</p>
+            <p class="action">...</p>
+            <a href="/main/index.html">
+              <i class="fa-solid fa-keyboard"></i>
+              Typing</a
+            >
+            <a href="#">
+              <i class="fa-solid fa-sliders"></i>
+              Settings</a
+            >
+            <a href="/test/main-test/index.html">
+              <i class="fa-solid fa-right-from-bracket"></i>Logout</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- //// -->
+    </nav>
     <div class="theme-container">
+      <button class="big-logo">
+        <div class="dots">...</div>
+      </button>
+      <!-- //////////// -->
       <div class="preview">
-        <div class="mini-logo">...</div>
+        <div class="mini-logo-container">
+          <div class="mini-logo">...</div>
+        </div>
         <div class="mini-text-container">
-          <div class="mini-text1">--------------</div>
+          <div class="mini-text1" data-text="-----">---------</div>
           <div class="mini-text2">--------------</div>
           <div class="mini-items mini-time">.</div>
           <div class="mini-items mini-restart">.</div>
         </div>
-        <div class="mini-username-container">
-          <div class="mini-username">----</div>
-        </div>
-          <div class="mini-menu">
-            <div class="mini-user-pfp">.</div>
-            <div class="mini-btns">
-              <div class="mini-menu-btns">.</div>
-              <div class="mini-menu-btns">.</div>
-              <div class="mini-menu-btns">.</div>
-            </div>
-          </div>
+        <div class="mini-username">----</div>
+        <div class="mini-btns">
+          <div class="mini-menu-btns">----</div>
+          <div class="mini-menu-btns">----</div>
+          <div class="mini-menu-btns">----</div>
         </div>
         <div class="mini-blob-container">
           <svg
@@ -64,6 +132,123 @@
               stroke="black"
             />
           </svg>
+        </div>
+      </div>
+      <button class="use-theme-btn">
+        <i class="fa-solid fa-hand-pointer"></i>
+        <p>Use theme</p>
+      </button>
+    </div>
+    <div class="theme-selector-container">
+      <div class="themes-btns">
+        <input
+          class="color-btn bg-color"
+          type="text"
+          value="Background"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn main-text"
+          type="text"
+          value="Correct"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn main-secondary"
+          type="text"
+          value="Untyped"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn main-incorrect"
+          type="text"
+          value="Incorrect"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn primary"
+          type="text"
+          value="Primary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn text-primary"
+          type="text"
+          value="Text Primary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn text-secondary"
+          type="text"
+          value="Text Secondary"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn hover"
+          type="text"
+          value="Hover"
+          readonly
+          data-coloris
+        />
+        <input
+          class="color-btn menu-background"
+          type="text"
+          value="Menu Background"
+          readonly
+          data-coloris
+        />
+        <input
+          id="last-btn"
+          class="color-btn menu-buttons"
+          type="text"
+          value="Menu Buttons"
+          readonly
+          data-coloris
+        />
+        <div class="reset">
+          <input
+            class="color-btn reset-theme-btn"
+            type="text"
+            readonly
+            value="Reset Theme"
+          />
+        </div>
+      </div>
+      <div class="saved-themes">
+        <div class="your-themes">
+          <div class="themes-head">Your Creations</div>
+          <div class="show-themes">
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+          </div>
+        </div>
+        <div class="community-themes">
+          <div class="themes-head">Community Creations</div>
+          <div class="show-themes">
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

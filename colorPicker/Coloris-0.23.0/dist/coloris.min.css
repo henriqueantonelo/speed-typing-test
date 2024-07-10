@@ -296,11 +296,11 @@ input.clr-color:focus {
 .clr-marker {
   box-sizing: border-box;
 }
-/* .clr-field {
+.clr-field {
   display: inline-block;
+  /* color: transparent; */
   position: relative;
-  color: transparent;
-} */
+}
 .clr-field input {
   margin: 0;
   direction: ltr;
@@ -310,7 +310,7 @@ input.clr-color:focus {
 }
 .clr-field button {
   position: absolute;
-  width: 30px;
+  /* width: 30px; */
   height: 100%;
   right: 0;
   top: 50%;

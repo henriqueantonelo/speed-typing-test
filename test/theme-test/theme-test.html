@@ -25,14 +25,17 @@
     <link rel="stylesheet" href="theme-test.css" />
   </head>
   <body>
-    <div class="big-logo">...</div>
     <div class="theme-container">
-      <button class="use-theme-btn">
-        <i class="fa-solid fa-hand-pointer"></i>
-        <p>Use theme</p>
+      <!-- <div class="big-logo">...</div> -->
+      <!-- //////////// -->
+      <button class="big-logo">
+        <div class="dots">...</div>
       </button>
+      <!-- //////////// -->
       <div class="preview">
-        <div class="mini-logo">...</div>
+        <div class="mini-logo-container">
+          <div class="mini-logo">...</div>
+        </div>
         <div class="mini-text-container">
           <div class="mini-text1">--------------</div>
           <div class="mini-text2">--------------</div>
@@ -64,9 +67,14 @@
           </svg>
         </div>
       </div>
+      <button class="use-theme-btn">
+        <i class="fa-solid fa-hand-pointer"></i>
+        <p>Use theme</p>
+      </button>
     </div>
     <div class="theme-selector-container">
       <div class="themes-btns">
+        <!-- <div class="top-blur"></div> -->
         <input
           class="color-btn bg-color"
           type="text"
@@ -140,9 +148,36 @@
           />
         </div>
       </div>
-      <!-- <div class="color-picker">
-        <div class="clr-picker"></div>
-      </div> -->
+      <div class="saved-themes">
+        <div class="your-themes">
+          <div class="themes-head">Your Creations</div>
+          <div class="show-themes">
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+          </div>
+        </div>
+        <div class="community-themes">
+          <div class="themes-head">Community Creations</div>
+          <div class="show-themes">
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+            <div class="used-theme">
+              <div class="theme-name hidden">Theme name</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="theme-test.js"></script>

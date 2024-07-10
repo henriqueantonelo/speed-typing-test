@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:ital@0;1&display=swap");
+:root {
+  --textSecondary: #ffffff;
+  --hover: #606060;
+  --menuBackground: #202020;
+  --menuBtns: #2a2a2a;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* /////////////////////// */
+
+.sti_container {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+}
+
+.sti_container a {
+  color: var(--textSecondary);
+  font-size: 21px;
+  transition: 0.25s all;
+}
+
+.sti_container a:hover {
+  color: var(--hover);
+}
+
+.sti_container span {
+  color: var(--textSecondary);
+  font-size: 21px;
+}
+
+.fa-hand-holding-heart {
+  padding-left: 25px;
+}
+
+.fa-github {
+  padding-left: 25px;
+}
+
+.fa-linkedin {
+  padding-left: 25px;
+}
+
+.fa-comment {
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 25px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.sti_container .btn {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+.sti_container:hover .btn {
+  background-color: var(--menuBackground);
+}
+
+.btn .btn-text {
+  max-width: 0;
+  display: inline-block;
+  transition: color 0.25s 0.5s, max-width 1.5s;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn:hover .btn-text {
+  max-width: 350px;
+  color: white;
+}

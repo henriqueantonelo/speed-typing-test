@@ -156,3 +156,15 @@ useTheme.addEventListener("click", function () {
   root.style.setProperty("--menuBackground", colors.menuBackground);
   root.style.setProperty("--menuBtns", colors.menuBtns);
 });
+
+///////
+
+const usedTheme = document.querySelector(".used-theme");
+const themeName = document.querySelector(".theme-name");
+usedTheme.addEventListener("mouseover", function () {
+  themeName.classList.remove("hidden");
+});
+
+usedTheme.addEventListener("mouseout", function () {
+  themeName.classList.add("hidden");
+});

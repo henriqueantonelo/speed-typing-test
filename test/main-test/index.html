@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>...</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
@@ -13,12 +12,19 @@
     <link
     rel="stylesheet"
     href="/colorPicker/Coloris-0.23.0/dist/coloris.min.css"
-  />
-  <script src="/colorPicker/Coloris-0.23.0/dist/coloris.min.js"></script>
-
+    />
+    <script src="/colorPicker/Coloris-0.23.0/dist/coloris.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/reusable/logo/logo.css">
+    <link rel="stylesheet" href="/reusable/user/user.css">
+    <link rel="stylesheet" href="/reusable/info/info.css">
+    <!-- <script src="/reusable/logo/logo.js"></script> -->
+    <script src="/reusable/info/info.js"></script>
+    <script src="/reusable/user/user.js"></script>
   </head>
   <body>
-    <nav class="navbar" tabindex="-1">
+    <nav class="navbar z-index" tabindex="-1">
+      <!-- //// -->
       <div id="wrapper">
         <a href="#" class="dots-Btn"
         tabindex="-1" >
@@ -48,15 +54,18 @@
           </div>
         </a>
       </div>
+      <!-- //// -->
       <div class="user-container-wrapper">
         <div class="user-container">
           <button class="dropbtn">
             <i class="fa-solid fa-circle-user"></i>
             <p>Capeta_2</p>
             <i class="fa-solid fa-chevron-down"></i>
-            <a class="leaderboard-btn fa-solid fa-ranking-star" href="/main/leaderboard/leaderboard.html">
+            <a
+              class="leaderboard-btn fa-solid fa-ranking-star"
+              href="/main/leaderboard/leaderboard.html"
+            >
             </a>
-            
           </button>
           <div class="dropdown-content">
             <a href="#">
@@ -72,11 +81,13 @@
               <i class="fa-solid fa-sliders"></i>
               Settings</a
             >
-            <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+            <a href="#">
+              <i class="fa-solid fa-right-from-bracket"></i>Logout</a
+            >
           </div>
         </div>
       </div>
-  </div>  
+      <!-- //// -->
     </nav>
     <main>
     </div>
@@ -176,24 +187,8 @@
         </span>
       </button>
     </div>
-    <div class="colors">
-      <p>Background</p>
-      <input class="background" data-coloris />
-      <p>Primary color</p>
-      <input class="primary" data-coloris />
-      <p>Secondary color</p>
-      <input class="secondary" data-coloris />
-      <p>Tertiary color</p>
-      <input class="tertiary" data-coloris />
-      <p>Text Primary</p>
-      <input class="text-primary" data-coloris />
-      <p>Text Secondary</p>
-      <input class="text-secondary" data-coloris />
-      <p>Main text</p>
-      <input class="main-text" data-coloris />
-
-    </div>
     </main>
     <script src="script.js"></script>
   </body>
+  
 </html>
